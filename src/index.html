@@ -497,7 +497,8 @@ if($('.navbar').length > 0){
         checkScroll();
     });
 }
-        fixMe = function() {
+        ;(function($) {
+   $.fn.fixMe = function() {
       return this.each(function() {
          var $this = $(this),
             $t_fixed;
@@ -526,6 +527,7 @@ if($('.navbar').length > 0){
          init();
       });
    };
+});
 console.log("jQuery!!!");
 $(document).ready(function(){
    $("table").fixMe();

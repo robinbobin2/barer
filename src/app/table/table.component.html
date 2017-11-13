@@ -41,14 +41,14 @@
   </thead>
   <tbody>
     
-    <tr class="hev" *ngFor="let post of posts; let i = index;">
+    <tr class="hev" *ngFor="let post of posts; let i = index;" [ngClass]="{'selectedpost': (selectedPost0 && i==0) || (selectedPost1 && i==1) || (selectedPost2 && i==2) || (selectedPost3 && i==3)  || (selectedPost4 && i==4) || (selectedPost5 && i==5) || (selectedPost6 && i==6) || (selectedPost7 && i==7) || (selectedPost8 && i==8) || (selectedPost9 && i==9)  || (selectedPost10 && i==10) || (selectedPost11 && i==11) || (selectedPost12 && i==12) || (selectedPost13 && i==13)  || (selectedPost14 && i==14)  || (selectedPost15 && i==15) || (selectedPost16 && i==16)  || (selectedPost17 && i==17) }">
 <td style="display: none;"><input type="checkbox" id="field" name="field" class="" value=""></td>
       <td class="sib">{{post.name}}</td>
       <td class="sib">{{post.uo}}</td>
       <td class="sib">{{post.io}}</td>
       <td class="sib">{{post.chan}}</td>
        <td class="sib">{{post.stock}}</td>
-      <td>
+      <td style="width: 100px;">
       <div *ngIf="i==0" class="input-group input-group-sm">
       <span class="input-group-btn">
         <button class="btn btn-secondary" type="button" (click)="onDecrease0(post)">-</button>
@@ -219,7 +219,7 @@
   </tbody>
 </table>
 <div class="col-md-12" style="text-align:center;margin-top:35px;">
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#zak" id="uncheck" style="width:160px;">Заказать</button>
+<button type="button" class="btn btn-primary" [ngClass]="{'selectedbutton': selectedPost0 || selectedPost1 || selectedPost2 || selectedPost3 || selectedPost4 || selectedPost5 || selectedPost6 || selectedPost7 || selectedPost8 || selectedPost9 || selectedPost10 || selectedPost11 || selectedPost12 || selectedPost13 || selectedPost14 || selectedPost15 || selectedPost16 || selectedPost17 }" data-toggle="modal" data-target="#zak" id="uncheck" style="width:160px;">Заказать</button>
 
 
 </div>
