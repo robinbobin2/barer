@@ -1,0 +1,618 @@
+<div id="bar" class="container-fluid" style="padding-bottom:35px;background:#eee;">
+<div class="container">
+<div class="row">
+  <div class="col-md-12" style="text-align:center;">
+<h3 style="margin-top:35px;color: rgb(132,129,160);font-weight: lighter;margin-bottom:35px;">Выбрать барьер искрозащиты</h3>
+</div>
+<div class="container" style="width: 1190px;">
+<!-- <div *ngIf="selectedPost0">
+<h2>{{selectedPost0.name}}</h2>
+<div class="input-group input-group-sm">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onDecrease0()">-</button>
+      </span>
+      <input type="text" class="form-control" value="{{count0}}" placeholder="Кол-во" style="width:100px;">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onCount0(selectedPost0)">+</button>
+      </span>
+    </div>
+</div> -->
+
+<!-- <div *ngIf="selectedPost2">
+<h2>{{selectedPost2.name}}</h2>
+<div>
+    <label>name: </label>
+    <input [(ngModel)]="selectedPost.name" placeholder="name"/>
+</div>
+</div> -->
+
+
+<table class="table table-hover sortable table-bordered kk table-condensed table-sm tbl blue" style="margin-top:50px;text-align:center;border-color:#fff;font-size:13px">
+  <thead class="thead-inverse" style="text-align:center">
+    <tr>
+      <!--<th  style="text-align:center" class="sorttable_nosort"></th>-->
+      <th  style="text-align:center" class="sorttable_nosort">Название</th>
+      <th  style="text-align:center">Uo, B</th>
+      <th  style="text-align:center">Io, mA</th>
+	  <th  style="text-align:center">Каналы</th>
+      <th  style="text-align:center">Наличие</th>
+      <th  style="text-align:center" class="sorttable_nosort">Количество</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="hev" *ngFor="let post of posts; let i = index;">
+<td style="display: none;"><input type="checkbox" id="field" name="field" class="" value=""></td>
+      <td class="sib">{{post.name}}</td>
+      <td class="sib">{{post.uo}}</td>
+      <td class="sib">{{post.io}}</td>
+      <td class="sib">{{post.chan}}</td>
+       <td class="sib">{{post.stock}}</td>
+      <td>
+      <div *ngIf="i==0" class="input-group input-group-sm">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onDecrease0(post)">-</button>
+      </span>
+      <input type="text" class="form-control" name = "name{{i}}" value="{{count0}}" placeholder="Кол-во" #box (input)="onEnter0(box.value, box.name)" style="width:100px;">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" name="name{{i}}" type="button" (click)="onCount0(post)">+</button>
+      </span>
+    </div>
+    <div *ngIf="i==1" class="input-group input-group-sm">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onDecrease1(post)">-</button>
+      </span>
+      <input type="text" class="form-control" name = "name{{i}}" value="{{count1}}" placeholder="Кол-во" #box (input)="onEnter(box.value, box.name)" style="width:100px;">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" name="name{{i}}" type="button" (click)="onCount1(post,$event)">+</button>
+      </span>
+    </div>
+    <div *ngIf="i==2" class="input-group input-group-sm">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onDecrease2(post)">-</button>
+      </span>
+      <input type="text" class="form-control" name = "name{{i}}" value="{{count2}}" placeholder="Кол-во" #box (input)="onEnter(box.value, box.name)" style="width:100px;">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" name="name{{i}}" type="button" (click)="onCount2(post,$event)">+</button>
+      </span>
+    </div>
+      <div *ngIf="i==3" class="input-group input-group-sm">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onDecrease3(post)">-</button>
+      </span>
+      <input type="text" class="form-control" name = "name{{i}}" value="{{count3}}" placeholder="Кол-во" #box (input)="onEnter(box.value, box.name)" style="width:100px;">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" name="name{{i}}" type="button" (click)="onCount3(post,$event)">+</button>
+      </span>
+    </div>
+      <div *ngIf="i==4" class="input-group input-group-sm">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onDecrease4(post)">-</button>
+      </span>
+      <input type="text" class="form-control" name = "name{{i}}" value="{{count4}}" placeholder="Кол-во" #box (input)="onEnter(box.value, box.name)" style="width:100px;">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" name="name{{i}}" type="button" (click)="onCount4(post,$event)">+</button>
+      </span>
+    </div>
+      <div *ngIf="i==5" class="input-group input-group-sm">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onDecrease5(post)">-</button>
+      </span>
+      <input type="text" class="form-control" name = "name{{i}}" value="{{count5}}" placeholder="Кол-во" #box (input)="onEnter(box.value, box.name)" style="width:100px;">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" name="name{{i}}" type="button" (click)="onCount5(post,$event)">+</button>
+      </span>
+    </div>
+      <div *ngIf="i==6" class="input-group input-group-sm">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onDecrease6(post)">-</button>
+      </span>
+      <input type="text" class="form-control" name = "name{{i}}" value="{{count6}}" placeholder="Кол-во" #box (input)="onEnter(box.value, box.name)" style="width:100px;">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" name="name{{i}}" type="button" (click)="onCount6(post,$event)">+</button>
+      </span>
+    </div>
+    <div *ngIf="i==7" class="input-group input-group-sm">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onDecrease7(post)">-</button>
+      </span>
+      <input type="text" class="form-control" name = "name{{i}}" value="{{count7}}" placeholder="Кол-во" #box (input)="onEnter(box.value, box.name)" style="width:100px;">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" name="name{{i}}" type="button" (click)="onCount7(post,$event)">+</button>
+      </span>
+    </div>
+    <div *ngIf="i==8" class="input-group input-group-sm">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onDecrease8(post)">-</button>
+      </span>
+      <input type="text" class="form-control" name = "name{{i}}" value="{{count8}}" placeholder="Кол-во" #box (input)="onEnter(box.value, box.name)" style="width:100px;">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" name="name{{i}}" type="button" (click)="onCount8(post,$event)">+</button>
+      </span>
+    </div>
+    <div *ngIf="i==9" class="input-group input-group-sm">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onDecrease9(post)">-</button>
+      </span>
+      <input type="text" class="form-control" name = "name{{i}}" value="{{count9}}" placeholder="Кол-во" #box (input)="onEnter(box.value, box.name)" style="width:100px;">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" name="name{{i}}" type="button" (click)="onCount9(post,$event)">+</button>
+      </span>
+    </div>
+      <div *ngIf="i==10" class="input-group input-group-sm">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onDecrease10(post)">-</button>
+      </span>
+      <input type="text" class="form-control" name = "name{{i}}" value="{{count10}}" placeholder="Кол-во" #box (input)="onEnter(box.value, box.name)" style="width:100px;">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" name="name{{i}}" type="button" (click)="onCount10(post,$event)">+</button>
+      </span>
+    </div>
+      <div *ngIf="i==11" class="input-group input-group-sm">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onDecrease11(post)">-</button>
+      </span>
+      <input type="text" class="form-control" name = "name{{i}}" value="{{count11}}" placeholder="Кол-во" #box (input)="onEnter(box.value, box.name)" style="width:100px;">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" name="name{{i}}" type="button" (click)="onCount11(post,$event)">+</button>
+      </span>
+    </div>
+      <div *ngIf="i==12" class="input-group input-group-sm">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onDecrease12(post)">-</button>
+      </span>
+      <input type="text" class="form-control" name = "name{{i}}" value="{{count12}}" placeholder="Кол-во" #box (input)="onEnter(box.value, box.name)" style="width:100px;">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" name="name{{i}}" type="button" (click)="onCount12(post,$event)">+</button>
+      </span>
+    </div>
+      <div *ngIf="i==13" class="input-group input-group-sm">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onDecrease13(post)">-</button>
+      </span>
+      <input type="text" class="form-control" name = "name{{i}}" value="{{count13}}" placeholder="Кол-во" #box (input)="onEnter(box.value, box.name)" style="width:100px;">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" name="name{{i}}" type="button" (click)="onCount13(post,$event)">+</button>
+      </span>
+    </div>
+    <div *ngIf="i==14" class="input-group input-group-sm">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onDecrease14(post)">-</button>
+      </span>
+      <input type="text" class="form-control" name = "name{{i}}" value="{{count14}}" placeholder="Кол-во" #box (input)="onEnter(box.value, box.name)" style="width:100px;">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" name="name{{i}}" type="button" (click)="onCount14(post,$event)">+</button>
+      </span>
+    </div>
+      <div *ngIf="i==15" class="input-group input-group-sm">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onDecrease15(post)">-</button>
+      </span>
+      <input type="text" class="form-control" name = "name{{i}}" value="{{count15}}" placeholder="Кол-во" #box (input)="onEnter(box.value, box.name)" style="width:100px;">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" name="name{{i}}" type="button" (click)="onCount15(post,$event)">+</button>
+      </span>
+    </div>
+    <div *ngIf="i==16" class="input-group input-group-sm">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onDecrease16(post)">-</button>
+      </span>
+      <input type="text" class="form-control" name = "name{{i}}" value="{{count16}}" placeholder="Кол-во" #box (input)="onEnter(box.value, box.name)" style="width:100px;">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" name="name{{i}}" type="button" (click)="onCount16(post,$event)">+</button>
+      </span>
+    </div>
+    <div *ngIf="i==17" class="input-group input-group-sm">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onDecrease17(post)">-</button>
+      </span>
+      <input type="text" class="form-control" name = "name{{i}}" value="{{count17}}" placeholder="Кол-во" #box (input)="onEnter(box.value, box.name)" style="width:100px;">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" name="name{{i}}" type="button" (click)="onCount17(post,$event)">+</button>
+      </span>
+    </div>
+
+
+      </td>
+      
+    </tr>
+  </tbody>
+</table>
+<div class="col-md-12" style="text-align:center;margin-top:35px;">
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#zak" id="uncheck" style="width:160px;">Заказать</button>
+
+
+</div>
+</div>
+
+</div></div></div>
+<div class="modal fade" id="zak" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Оформление заказа</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+              
+        <h3>Ваш заказ</h3>
+<table class="table table-hover sortable table-bordered table-condensed table-sm tbl" id="myDiv" style="width: 100%;">
+  <thead class="thead-inverse" style="text-align:center">
+    <tr>
+      <th style="text-align:center;vertical-align:middle;" class="sorttable_nosort"></th>
+      <th  style="text-align:center;vertical-align:middle;" class="sorttable_nosort">Название</th>
+      <th  style="text-align:center;vertical-align:middle;">Uo, B</th>
+      <th  style="text-align:center;vertical-align:middle;">Io, mA</th>
+    <th  style="text-align:center;vertical-align:middle;">Каналы</th>
+      <th  style="text-align:center;vertical-align:middle;">Наличие</th>
+      <th  style="text-align:center;vertical-align:middle;" class="sorttable_nosort">Количество</th>
+    </tr>
+  </thead>
+
+<tbody>
+  <tr *ngIf="selectedPost0">
+    <td></td>
+    <td>{{selectedPost0.name}}</td>
+    <td>{{selectedPost0.uo}}</td>
+    <td>{{selectedPost0.io}}</td>
+    <td>{{selectedPost0.chan}}</td>
+    <td>{{selectedPost0.stock}}</td>
+    <td><div class="input-group input-group-sm">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onDecrease0(selectedPost0)">-</button>
+      </span>
+      <input type="text" class="form-control" value="{{count0}}" placeholder="Кол-во" #box (input)="onEnter(box.value, box.name)" style="width:100px;">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onCount0(selectedPost0)">+</button>
+      </span>
+    </div></td>
+  </tr>
+  <tr *ngIf="selectedPost1">
+    <td></td>
+    <td>{{selectedPost1.name}}</td>
+    <td>{{selectedPost1.uo}}</td>
+    <td>{{selectedPost1.io}}</td>
+    <td>{{selectedPost1.chan}}</td>
+    <td>{{selectedPost1.stock}}</td>
+    <td><div class="input-group input-group-sm">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onDecrease1(selectedPost1)">-</button>
+      </span>
+      <input type="text" class="form-control" value="{{count1}}" placeholder="Кол-во" #box (input)="onEnter(box.value, box.name)" style="width:100px;">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onCount1(selectedPost1)">+</button>
+      </span>
+    </div></td>
+  </tr>
+  <tr *ngIf="selectedPost2">
+    <td></td>
+    <td>{{selectedPost2.name}}</td>
+    <td>{{selectedPost2.uo}}</td>
+    <td>{{selectedPost2.io}}</td>
+    <td>{{selectedPost2.chan}}</td>
+    <td>{{selectedPost2.stock}}</td>
+    <td><div class="input-group input-group-sm">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onDecrease2(selectedPost2)">-</button>
+      </span>
+      <input type="text" class="form-control" value="{{count2}}" placeholder="Кол-во" #box (input)="onEnter(box.value, box.name)" style="width:100px;">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onCount2(selectedPost2)">+</button>
+      </span>
+    </div></td>
+  </tr>
+    <tr *ngIf="selectedPost3">
+    <td></td>
+    <td>{{selectedPost3.name}}</td>
+    <td>{{selectedPost3.uo}}</td>
+    <td>{{selectedPost3.io}}</td>
+    <td>{{selectedPost3.chan}}</td>
+    <td>{{selectedPost3.stock}}</td>
+    <td><div class="input-group input-group-sm">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onDecrease3(selectedPost3)">-</button>
+      </span>
+      <input type="text" class="form-control" value="{{count3}}" placeholder="Кол-во" #box (input)="onEnter(box.value, box.name)" style="width:100px;">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onCount3(selectedPost3)">+</button>
+      </span>
+    </div></td>
+  </tr>
+    <tr *ngIf="selectedPost4">
+    <td></td>
+    <td>{{selectedPost4.name}}</td>
+    <td>{{selectedPost4.uo}}</td>
+    <td>{{selectedPost4.io}}</td>
+    <td>{{selectedPost4.chan}}</td>
+    <td>{{selectedPost4.stock}}</td>
+    <td><div class="input-group input-group-sm">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onDecrease4(selectedPost4)">-</button>
+      </span>
+      <input type="text" class="form-control" value="{{count4}}" placeholder="Кол-во" #box (input)="onEnter(box.value, box.name)" style="width:100px;">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onCount4(selectedPost4)">+</button>
+      </span>
+    </div></td>
+  </tr>
+      <tr *ngIf="selectedPost5">
+    <td></td>
+    <td>{{selectedPost5.name}}</td>
+    <td>{{selectedPost5.uo}}</td>
+    <td>{{selectedPost5.io}}</td>
+    <td>{{selectedPost5.chan}}</td>
+    <td>{{selectedPost5.stock}}</td>
+    <td><div class="input-group input-group-sm">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onDecrease5(selectedPost5)">-</button>
+      </span>
+      <input type="text" class="form-control" value="{{count5}}" placeholder="Кол-во" #box (input)="onEnter(box.value, box.name)" style="width:100px;">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onCount5(selectedPost5)">+</button>
+      </span>
+    </div></td>
+  </tr>
+      <tr *ngIf="selectedPost6">
+    <td></td>
+    <td>{{selectedPost6.name}}</td>
+    <td>{{selectedPost6.uo}}</td>
+    <td>{{selectedPost6.io}}</td>
+    <td>{{selectedPost6.chan}}</td>
+    <td>{{selectedPost6.stock}}</td>
+    <td><div class="input-group input-group-sm">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onDecrease6(selectedPost6)">-</button>
+      </span>
+      <input type="text" class="form-control" value="{{count6}}" placeholder="Кол-во" #box (input)="onEnter(box.value, box.name)" style="width:100px;">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onCount6(selectedPost6)">+</button>
+      </span>
+    </div></td>
+  </tr>
+      <tr *ngIf="selectedPost7">
+    <td></td>
+    <td>{{selectedPost7.name}}</td>
+    <td>{{selectedPost7.uo}}</td>
+    <td>{{selectedPost7.io}}</td>
+    <td>{{selectedPost7.chan}}</td>
+    <td>{{selectedPost7.stock}}</td>
+    <td><div class="input-group input-group-sm">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onDecrease7(selectedPost7)">-</button>
+      </span>
+      <input type="text" class="form-control" value="{{count7}}" placeholder="Кол-во" #box (input)="onEnter(box.value, box.name)" style="width:100px;">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onCount7(selectedPost7)">+</button>
+      </span>
+    </div></td>
+  </tr>
+      <tr *ngIf="selectedPost8">
+    <td></td>
+    <td>{{selectedPost8.name}}</td>
+    <td>{{selectedPost8.uo}}</td>
+    <td>{{selectedPost8.io}}</td>
+    <td>{{selectedPost8.chan}}</td>
+    <td>{{selectedPost8.stock}}</td>
+    <td><div class="input-group input-group-sm">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onDecrease8(selectedPost8)">-</button>
+      </span>
+      <input type="text" class="form-control" value="{{count8}}" placeholder="Кол-во" #box (input)="onEnter(box.value, box.name)" style="width:100px;">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onCount8(selectedPost8)">+</button>
+      </span>
+    </div></td>
+  </tr>
+      <tr *ngIf="selectedPost9">
+    <td></td>
+    <td>{{selectedPost9.name}}</td>
+    <td>{{selectedPost9.uo}}</td>
+    <td>{{selectedPost9.io}}</td>
+    <td>{{selectedPost9.chan}}</td>
+    <td>{{selectedPost9.stock}}</td>
+    <td><div class="input-group input-group-sm">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onDecrease9(selectedPost9)">-</button>
+      </span>
+      <input type="text" class="form-control" value="{{count9}}" placeholder="Кол-во" #box (input)="onEnter(box.value, box.name)" style="width:100px;">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onCount9(selectedPost9)">+</button>
+      </span>
+    </div></td>
+  </tr>
+  <tr *ngIf="selectedPost10">
+    <td></td>
+    <td>{{selectedPost10.name}}</td>
+    <td>{{selectedPost10.uo}}</td>
+    <td>{{selectedPost10.io}}</td>
+    <td>{{selectedPost10.chan}}</td>
+    <td>{{selectedPost10.stock}}</td>
+    <td><div class="input-group input-group-sm">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onDecrease10(selectedPost10)">-</button>
+      </span>
+      <input type="text" class="form-control" value="{{count10}}" placeholder="Кол-во" #box (input)="onEnter(box.value, box.name)" style="width:100px;">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onCount10(selectedPost10)">+</button>
+      </span>
+    </div></td>
+  </tr>
+  <tr *ngIf="selectedPost11">
+    <td></td>
+    <td>{{selectedPost11.name}}</td>
+    <td>{{selectedPost11.uo}}</td>
+    <td>{{selectedPost11.io}}</td>
+    <td>{{selectedPost11.chan}}</td>
+    <td>{{selectedPost11.stock}}</td>
+    <td><div class="input-group input-group-sm">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onDecrease11(selectedPost11)">-</button>
+      </span>
+      <input type="text" class="form-control" value="{{count11}}" placeholder="Кол-во" #box (input)="onEnter(box.value, box.name)" style="width:100px;">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onCount11(selectedPost11)">+</button>
+      </span>
+    </div></td>
+  </tr>
+  <tr *ngIf="selectedPost12">
+    <td></td>
+    <td>{{selectedPost12.name}}</td>
+    <td>{{selectedPost12.uo}}</td>
+    <td>{{selectedPost12.io}}</td>
+    <td>{{selectedPost12.chan}}</td>
+    <td>{{selectedPost12.stock}}</td>
+    <td><div class="input-group input-group-sm">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onDecrease12(selectedPost12)">-</button>
+      </span>
+      <input type="text" class="form-control" value="{{count12}}" placeholder="Кол-во" #box (input)="onEnter(box.value, box.name)" style="width:100px;">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onCount12(selectedPost12)">+</button>
+      </span>
+    </div></td>
+  </tr>
+  <tr *ngIf="selectedPost13">
+    <td></td>
+    <td>{{selectedPost13.name}}</td>
+    <td>{{selectedPost13.uo}}</td>
+    <td>{{selectedPost13.io}}</td>
+    <td>{{selectedPost13.chan}}</td>
+    <td>{{selectedPost13.stock}}</td>
+    <td><div class="input-group input-group-sm">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onDecrease13(selectedPost13)">-</button>
+      </span>
+      <input type="text" class="form-control" value="{{count13}}" placeholder="Кол-во" #box (input)="onEnter(box.value, box.name)" style="width:100px;">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onCount13(selectedPost13)">+</button>
+      </span>
+    </div></td>
+  </tr>
+  <tr *ngIf="selectedPost14">
+    <td></td>
+    <td>{{selectedPost14.name}}</td>
+    <td>{{selectedPost14.uo}}</td>
+    <td>{{selectedPost14.io}}</td>
+    <td>{{selectedPost14.chan}}</td>
+    <td>{{selectedPost14.stock}}</td>
+    <td><div class="input-group input-group-sm">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onDecrease14(selectedPost14)">-</button>
+      </span>
+      <input type="text" class="form-control" value="{{count14}}" placeholder="Кол-во" #box (input)="onEnter(box.value, box.name)" style="width:100px;">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onCount14(selectedPost14)">+</button>
+      </span>
+    </div></td>
+  </tr>
+  <tr *ngIf="selectedPost15">
+    <td></td>
+    <td>{{selectedPost15.name}}</td>
+    <td>{{selectedPost15.uo}}</td>
+    <td>{{selectedPost15.io}}</td>
+    <td>{{selectedPost15.chan}}</td>
+    <td>{{selectedPost15.stock}}</td>
+    <td><div class="input-group input-group-sm">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onDecrease15(selectedPost15)">-</button>
+      </span>
+      <input type="text" class="form-control" value="{{count15}}" placeholder="Кол-во" #box (input)="onEnter(box.value, box.name)" style="width:100px;">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onCount15(selectedPost15)">+</button>
+      </span>
+    </div></td>
+  </tr>
+  <tr *ngIf="selectedPost16">
+    <td></td>
+    <td>{{selectedPost16.name}}</td>
+    <td>{{selectedPost16.uo}}</td>
+    <td>{{selectedPost16.io}}</td>
+    <td>{{selectedPost16.chan}}</td>
+    <td>{{selectedPost16.stock}}</td>
+    <td><div class="input-group input-group-sm">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onDecrease16(selectedPost16)">-</button>
+      </span>
+      <input type="text" class="form-control" value="{{count16}}" placeholder="Кол-во" #box (input)="onEnter(box.value, box.name)" style="width:100px;">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onCount16(selectedPost16)">+</button>
+      </span>
+    </div></td>
+  </tr>
+  <tr *ngIf="selectedPost17">
+    <td></td>
+    <td>{{selectedPost17.name}}</td>
+    <td>{{selectedPost17.uo}}</td>
+    <td>{{selectedPost17.io}}</td>
+    <td>{{selectedPost17.chan}}</td>
+    <td>{{selectedPost17.stock}}</td>
+    <td><div class="input-group input-group-sm">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onDecrease17(selectedPost17)">-</button>
+      </span>
+      <input type="text" class="form-control" value="{{count17}}" placeholder="Кол-во" #box (input)="onEnter(box.value, box.name)" style="width:100px;">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="onCount17(selectedPost17)">+</button>
+      </span>
+    </div></td>
+  </tr>
+</tbody>
+</table>
+ <form>
+
+  <div class="form-group" style="margin-bottom:0">
+    <label for="" style="margin-bottom:0">Имя</label>
+    <input type="text" class="form-control" id="" placeholder="" required="">
+  </div>
+
+   <div class="form-group" style="margin-bottom:0">
+    <label for="" style="margin-bottom:0">Контактный телефон</label>
+    <input type="text" class="form-control" id="" placeholder="" required="">
+  </div>
+
+  <div class="form-group" style="margin-bottom:0">
+    <label for="" style="margin-bottom:0">Электронная почта</label>
+    <input type="email" class="form-control" id="" aria-describedby="" placeholder="">
+
+  </div>
+
+    <div class="form-group" style="margin-bottom:0">
+    <label for="" style="margin-bottom:0">Компания</label>
+    <input type="text" class="form-control" id="" placeholder="">
+  </div>
+  
+   <div class="form-group" style="margin-bottom:0">
+    <label for="" style="margin-bottom:0">Комментарий</label>
+    <textarea type="text" class="form-control" id="" placeholder=""> </textarea>
+  </div>
+  
+</form>
+      </div>
+      <div class="modal-footer">
+  
+ <button type="button"  class="btn btn-primary" data-dismiss="modal" aria-label="Close">Продолжить покупки</button>
+        <button type="button" onclick="$('#zak').modal('hide');$('#spasibo').modal('show')" class="btn btn-primary">Оформить</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="spasibo" tabindex="1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Оформление заказа</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Спасибо за ваш заказ скоро мы свяжемся с Вами!
+      </div>
+
+    </div>
+  </div>
+</div>

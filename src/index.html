@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Barer</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js">
+    
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+<script type="text/javascript">var app = angular.module('iskra', ['ngRoute']);
+$scope.showPopover = function() {
+  $scope.popoverIsVisible = true; 
+};
+
+$scope.hidePopover = function () {
+  $scope.popoverIsVisible = false;
+};
+
+</script>
+</head>
+
+<body id="product">
+<nav class="navbar navbar-expand-lg fixed-top navbar-light">
+  <div class="container">
+      
+                       <a href="#" class="logo-hide" onclick="location.reload();">
+      
+  <img src="http://diplom-invoice.ru/iskra/wp/wp-content/themes/iskra/logomenu.png"/>
+      
+      </a>
+ 
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+    
+
+      
+      <ul class="navbar-nav mr-auto" id="navbar" style="margin:0 auto;">
+      
+                     <a href="#" onclick="location.reload();" style="margin-right:35px;">
+      
+  <img class="logo-menu" src="http://diplom-invoice.ru/iskra/wp/wp-content/themes/iskra/logomenu.png"/>
+      
+      </a>
+          
+          
+          
+        <li class="nav-item">
+        <a class="nav-link" href="#product" style="font-size:14px;">Продукция <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#use" style="font-size:14px;">Применение</a>
+      </li>
+      <!--<li class="nav-item">
+        <a class="nav-link" href="#ust">Устройства</a>
+      </li>-->
+  <li class="nav-item">
+        <a class="nav-link" href="#bar" style="font-size:14px;">Выбрать барьер</a>
+      </li>
+        <!--<li class="nav-item">
+        <a class="nav-link" href="#advantage">Преимущества</a>
+      </li>-->
+      <li class="nav-item">
+        <a class="nav-link" href="#scheme" style="font-size:14px;">Схема</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="#doc" style="font-size:14px;">Документация</a>
+      </li>
+    
+      
+       <form class="form-inline" style="margin-left:35px;">
+    <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#exampleModal">Оставить заявку</button>
+
+  </form>
+      
+      </ul>
+ 
+
+ 
+ 
+
+
+
+ 
+ 
+  </div>
+ 
+  </div>
+</nav>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Оставить заявку</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="mail" method="post">
+      <div class="modal-body">
+        
+  
+    <div class="form-group" style="margin-bottom:0">
+    <label for="" style="margin-bottom:0">Имя</label>
+    <input type="text" name="namae" class="form-control" id="" placeholder="">
+  </div>
+  
+    <div class="form-group" style="margin-bottom:0">
+    <label for="" style="margin-bottom:0">Телефон</label>
+    <input type="text" name="tel" class="form-control" id="" placeholder="">
+  </div>
+  
+  <div class="form-group" style="margin-bottom:0">
+    <label for="" style="margin-bottom:0">Электронная почта</label>
+    <input type="email" name="email" class="form-control" id="" aria-describedby="" placeholder="">
+
+  </div>
+  <div class="form-group" style="margin-bottom:0">
+    <label for="" style="margin-bottom:0">Компания</label>
+    <input type="text" name="comp" class="form-control" id="" placeholder="">
+  </div>
+
+  <div class="form-group" style="margin-bottom:0">
+    <label for="" style="margin-bottom:0">Комментарий</label>
+    <textarea name="comment" class="form-control" id="" placeholder=""></textarea>
+  </div>
+
+      </div>
+      <div class="modal-footer">
+       <input type="submit" name="subm" class="btn btn-primary" value="Отправить">
+        <!-- <button type="button" class="btn btn-primary">Отправить</button> min-height:100%;height:auto;overflow:hidden;-->
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<div   class="container-fluid"  style="text-align:center;padding-bottom:25px;margin-top:146px;">
+
+
+
+<div class="container">
+
+
+<div style="width:78%;height:3px;background:url('http://diplom-invoice.ru/iskra/wp/wp-content/themes/iskra/pol.png') center center;background-size:100% auto;margin:0 auto;margin-top:100px;"></div>
+
+
+<div class="row">
+<div class="col-md-12">
+
+</div>
+<div class="col-md-2 left-first"></div>
+<div class="col-md-4 first"><img src="http://diplom-invoice.ru/iskra/wp/wp-content/themes/iskra/first.png" style="width:70%;"></div>
+<div class="col-md-4 poj-right">
+<img src="http://diplom-invoice.ru/iskra/wp/wp-content/themes/iskra/logo_K15.png">
+<!--<h4>Барьер искрозащиты</h4>-->
+</div>
+<div class="col-md-2 right-first"></div>
+
+
+
+</div>
+</div>
+<div class="container">
+<div style="width:78%;height:3px;background:url('http://diplom-invoice.ru/iskra/wp/wp-content/themes/iskra/pol.png') center center;background-size:100% auto;margin:0 auto;margin-top:35px;margin-bottom:40px;"></div>
+</div>
+
+    
+<div class="container-fluid">
+
+    <!--<div class="col-md col-xs-12"><div style="width:250px;height:50px;border-radius:40px;border: 5px solid rgb(132,129,160);margin:0 auto;margin-top:5px"></div></div>
+    <div class="col-md col-xs-12"><div style="width:250px;height:50px;border-radius:40px;border: 5px solid rgb(132,129,160);margin:0 auto;margin-top:5px"></div></div>-->
+    <div class="container">
+
+    <div class="row">
+
+    
+    
+    <div class="col-md"></div>
+<div class="col-md-3 col-xs-12" style="paddin:0"><div class=" ova-left" >Цена</div></div>
+<div class="col-md-3 col-xs-12" style="paddin:0"><div class=" ova-center" >Компактность</div></div>
+<div class="col-md-3 col-xs-12" style="paddin:0"><div class=" ova-right" >Надежность</div></div>
+     <div class="col-md"></div>
+    
+    
+
+</div>
+</div>
+</div>    
+
+
+</div>
+
+<section id="use" class="fullsize-video-bg">
+
+<div style="display:none;">Iteration: <span id="iteration"></span></div>
+  <div id="video-viewport" class="video">
+  <div class="inner" style="position:absolute;margin-top:17vh;width:100%;text-align:center;">
+    <div>
+     <!--  <h3 style="font-weight: lighter;color:white"><?php echo get_theme_mod('text2'); ?></h3>
+                <h5 style="font-weight: lighter;color:white;width:600px;margin:0 auto;"><?php echo get_theme_mod('text3'); ?></h5> -->
+    </div>
+  </div>
+  <!--  -->
+    <video  class="thevideo" width="1920" height="1280" id="myVideo" muted loop >
+      <source src="http://diplom-invoice.ru/iskra/wp/wp-content/themes/iskra/Comp_10_7.mp4" type="video/mp4" />
+
+    </video>
+  </div>
+
+</section>
+
+<!--<div id="fullScreenDiv">  autoplay 
+        <img src="< ?php echo get_stylesheet_directory_uri(); ? >/back.png" id="videosubstitute" alt="Full screen background video">
+        <div id="videoDiv">           
+            <video preload="preload" id="video" autoplay="autoplay" loop="loop" >
+            <source src="< ? php echo get_stylesheet_directory_uri(); ? >/Comp 6.mp4" type="video/mp4"></source>
+      <!--<source src="< ?php echo get_stylesheet_directory_uri(); ? >/Comp 6.webm" type="video/webm"></source>
+            
+            </video> 
+        </div>
+        <div id="messageBox"> 
+            <div>
+                <h1>< ?php echo get_theme_mod('text2'); ? ></h1>
+                <h2>< ?php echo get_theme_mod('text3'); ? ></h2>
+      
+            </div>
+        </div>   
+    </div>-->
+<!--
+<div  id="use"  class="container-fluid" style="text-align:center;background:url(< ?php echo get_stylesheet_directory_uri(); ?>/back.png) center center;height:auto;background-size:cover;padding-bottom:50px;">
+<div class="container">
+<div class="row">
+
+<div class="col-md-12">
+<h3 style="margin-top:50px;font-weight: lighter;color:white">< ?php echo get_theme_mod('text2'); ?>
+</h3>
+</div>
+
+<div class="col-md-2"></div>
+<div class="col-md-8">
+<h5 style="font-weight: lighter;color:white;text-align: justify;">
+< ?php echo get_theme_mod('text3'); ?>
+</h5>
+
+<img src="< ?php echo get_stylesheet_directory_uri(); ?>/sss.png" style="width:50%;margin-top:50px;">
+
+</div>
+<div class="col-md-2"></div>
+
+
+
+</div>
+</div>
+</div>
+-->
+
+
+  <div id="ust" class="container-fluid" style="text-align:center;padding-bottom:35px;">
+<div class="container">
+<div class="row">
+
+<div class="col-md-12">
+<h3 style="font-weight: lighter;color: rgb(132,129,160);margin-bottom:35px;margin-top: 35px;">Взрывозащищенные устройства К15</h3>
+</div>
+
+
+<div class="col-md-6" style="text-align:center;z-index:10;line-height:46px;">
+<div class="ustr-block top-bl-left">К15-БИЗ-2690a</div>
+</div>
+<div class="col-md-6" style="text-align:center;z-index:10;line-height:46px;">
+<div class="ustr-block top-bl-right">К15-БИЗ-14150b</div>
+</div>
+
+
+<div class="col-md-3" style="z-index:10;line-height:46px;">
+
+
+
+<div class="ustr-block cntr-bl-left-one" >К15-БИЗ-2690b</div>
+
+<div class="ustr-block cntr-bl-left" >К15-БИЗ-27120a</div>
+
+<div class="ustr-block cntr-bl-left" >К15-БИЗ-1350b</div>
+
+<div class="ustr-block cntr-bl-left-one">К15-БИЗ-2424b</div>
+
+
+</div>
+
+
+<div class="col-md-6" style="text-align:center">
+<img src="http://diplom-invoice.ru/iskra/wp/wp-content/themes/iskra/centerblock.png" style="width:63%;margin-left:5px;">
+</div>
+<div class="col-md-3" style="z-index:10;line-height:46px;">
+
+
+
+<div class="ustr-block cntr-bl-right-one" >К15-БИЗ-1212a</div>
+
+<div class="ustr-block cntr-bl-right" >К15-БИЗ-1212b</div>
+
+<div class="ustr-block cntr-bl-right" >К15-БИЗА-2440a</div>
+
+<div class="ustr-block cntr-bl-right-two" >К15-БИЗА-24CAN</div>
+
+
+
+</div>
+
+<div class="col-md-6" style="text-align:center;z-index:10;line-height:46px;">
+<div class="ustr-block bot-bl-left" >К15-БИЗ-14150a</div>
+</div>
+<div class="col-md-6" style="text-align:center;z-index:10;line-height:46px;">
+<div class="ustr-block bot-bl-right" >К15-БИЗА-24NAM-NO</div>
+</div>
+
+</div>
+</div>
+</div>
+
+  <app-root></app-root>
+  
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+  <script src="http://diplom-invoice.ru/iskra/wp/wp-content/themes/iskra/sorttable.js"></script>
+  <script src="http://diplom-invoice.ru/jquery.fixme.min.js"></script>
+    <script type="text/javascript">
+
+console.log("asd")
+
+  $("#navbar").on("click", "a.nav-link", function(){
+    var idtop = $($(this).attr("href")).offset().top;
+    $('html,body').animate({scrollTop: idtop - 46}, 500);
+    return false;
+});
+  
+  /*function hoverdiv(e,divid){
+
+    var left  = e.clientX  + "px";
+    var top  = e.clientY  + "px";
+
+    var div = document.getElementById(divid);
+
+    div.style.left = left;
+    div.style.top = top;
+
+    $("#"+divid).toggle();
+    return false;
+}*/
+
+function hoverdiv(e,divid){ var left = e.clientX + "px"; var top = e.clientY + "px"; $("#"+divid).css('left',left); $("#"+divid).css('top',top); $("#"+divid).css('position','fixed'); $("#"+divid).toggle(); return false; }
+
+$( ".hev" ).click(function() {
+  $( ".hev + .show" ).slideToggle( "slow", function() {
+    // Animation complete.
+  });
+});
+$(function() {
+var enableSubmit = function(ele) {
+    $(ele).removeAttr("disabled");
+}
+  $(".kk :checkbox").change(function() {
+    $("#uncheck").attr("disabled", true);
+    setTimeout(function() { enableSubmit("#uncheck") }, 1000);
+    var arr = $(":checkbox:checked").map(function() { return $(this).parents("tr").html(); }).get();
+    $("#myDiv").html('<thead class="thead-inverse" style="text-align:center"><tr><th  style="text-align:center" class="sorttable_nosort"></th><th  style="text-align:center" class="sorttable_nosort">Название</th><th  style="text-align:center">Uo, B</th><th  style="text-align:center">Io, mA</th><th  style="text-align:center">Каналы</th><th  style="text-align:center">Наличие</th><th  style="text-align:center" class="sorttable_nosort">Количество</th></tr></thead><tr>'+arr.join('</tr>'));
+  });
+});
+
+function ToggleBGColour(item) {
+    var td = $(item).parent();      
+    if (td.is('.rowSelected'))      
+        td.removeClass("rowSelected");      
+    else        
+        td.addClass("rowSelected");     
+}
+var min_w = 300;
+var vid_w_orig;
+var vid_h_orig;
+
+$(function() {
+
+    vid_w_orig = parseInt($('video').attr('width'));
+    vid_h_orig = parseInt($('video').attr('height'));
+
+    $(window).resize(function () { fitVideo(); });
+    $(window).trigger('resize');
+
+});
+function fitVideo() {
+
+    $('#video-viewport').width($('.fullsize-video-bg').width());
+    $('#video-viewport').height($('.fullsize-video-bg').height());
+
+    var scale_h = $('.fullsize-video-bg').width() / vid_w_orig;
+    var scale_v = $('.fullsize-video-bg').height() / vid_h_orig;
+    var scale = scale_h > scale_v ? scale_h : scale_v;
+
+    if (scale * vid_w_orig < min_w) {scale = min_w / vid_w_orig;};
+
+    $('video').width(scale * vid_w_orig);
+    $('video').height(scale * vid_h_orig);
+
+    $('#video-viewport').scrollLeft(($('video').width() - $('.fullsize-video-bg').width()) / 2);
+    $('#video-viewport').scrollTop(($('video').height() - $('.fullsize-video-bg').height()) / 2);
+
+};
+
+
+
+/*var iterations = 1;
+
+document.getElementById('iteration').innerText = iterations;
+
+myVideo.addEventListener('ended', function () {    
+
+    if (iterations < 7) {       
+
+        this.currentTime = 0;
+        this.play();
+        iterations ++;
+        
+        document.getElementById('iteration').innerText = iterations;
+
+    }   
+
+}, false);
+*/
+
+
+if (screen.width > '768'){
+
+
+
+var figure = $(".video");
+        var vid = $("video");
+
+        [].forEach.call(figure, function (item) {
+                item.addEventListener('mouseover', hoverVideo, false);
+                item.addEventListener('mouseout', hideVideo, false);
+        });
+        
+        function hoverVideo(e) {  
+                $(this).find('.thevideo')[0].play();
+        }
+
+function hideVideo(e) {
+                $(this).find('.thevideo')[0].pause(); 
+        };
+       }
+       
+       
+        
+        
+if (screen.width <= '768') {
+   
+    $(".thevideo").attr('autoplay','autoplay');
+    $(".thevideo").attr('loop','loop');
+    $(".thevideo").attr('poster','http://diplom-invoice.ru/iskra/wp/wp-content/themes/iskra/Comp10_3.gif');
+    
+
+};
+ 
+   
+        function checkScroll(){
+    var startY = $('.navbar').height() * 2; //The point where the navbar changes in px
+
+    if($(window).scrollTop() > startY){
+        $('.navbar').addClass("scrolled");
+    }else{
+        $('.navbar').removeClass("scrolled");
+    }
+}
+
+if($('.navbar').length > 0){
+    $(window).on("scroll load resize", function(){
+        checkScroll();
+    });
+}
+        fixMe = function() {
+      return this.each(function() {
+         var $this = $(this),
+            $t_fixed;
+         function init() {
+            $this.wrap('<div class="container" />');
+            $t_fixed = $this.clone();
+            $t_fixed.find("tbody").remove().end().addClass("fixed").insertBefore($this);
+            resizeFixed();
+         }
+         function resizeFixed() {
+            $t_fixed.find("th").each(function(index) {
+               $(this).css("width",$this.find("th").eq(index).outerWidth()+"px");
+            });
+         }
+         function scrollFixed() {
+            var offset = $(this).scrollTop(),
+            tableOffsetTop = $this.offset().top-49,
+            tableOffsetBottom = tableOffsetTop + $this.height() - $this.find("thead").height();
+            if(offset < tableOffsetTop || offset > tableOffsetBottom)
+               $t_fixed.hide();
+            else if(offset >= tableOffsetTop && offset <= tableOffsetBottom && $t_fixed.is(":hidden"))
+               $t_fixed.show();
+         }
+         $(window).resize(resizeFixed);
+         $(window).scroll(scrollFixed);
+         init();
+      });
+   };
+console.log("jQuery!!!");
+$(document).ready(function(){
+   $("table").fixMe();
+   $(".up").click(function() {
+      $('html, body').animate({
+      scrollTop: 0
+   }, 2000);
+ });
+});
+
+   
+     
+        
+        
+</script>   
+</body>
+</html>

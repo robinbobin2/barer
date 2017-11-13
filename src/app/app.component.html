@@ -1,0 +1,148 @@
+	<div *ngFor="let cont of content">
+  
+
+<app-table></app-table>
+
+<div id="advantage" class="container-fluid" style="text-align:center;padding-bottom:35px;
+background: rgb(132,129,160);color:white">
+<div class="container">
+<div class="row">
+
+<div class="col-md-12">
+<h3 style="margin-top:35px;margin-bottom:35px;font-weight: lighter;">{{cont.title_one}}</h3>
+</div>
+
+<div class="col-md-3">
+<img src="http://diplom-invoice.ru/iskra/wp/wp-content/themes/iskra/p1.gif" style="width:45%;">
+<p>{{cont.textone}}</p>
+</div>
+
+<div class="col-md-3">
+<img src="http://diplom-invoice.ru/iskra/wp/wp-content/themes/iskra/p2.png" style="width:50%;">
+<p>{{cont.texttwo}}</p>
+</div>
+
+<div class="col-md-3">
+<img src="http://diplom-invoice.ru/iskra/wp/wp-content/themes/iskra/p3.png" style="width:50%;">
+<p>{{cont.textthree}}
+</p>
+</div>
+
+<div class="col-md-3">
+<img src="http://diplom-invoice.ru/iskra/wp/wp-content/themes/iskra/p4.png" style="width:50%;">
+<p>{{cont.textfour}}
+</p>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<div id="scheme"  class="container-fluid" style="text-align:center;padding-bottom:35px;color:rgb(132,129,160);">
+<div class="container">
+<div class="row">
+
+<div class="col-md-12">
+<h3 style="margin-top:35px;margin-bottom:35px;font-weight: lighter;">{{cont.titletwo}}</h3>
+</div>
+
+<div class="col-md-12" style="text-align:center">
+<img class="cep" src="http://diplom-invoice.ru/iskra/wp/wp-content/themes/iskra/cep.png" >
+</div>
+
+<div class="col-md-12" style="text-align:left;margin-top:35px;">
+<p>
+{{cont.textfive}}
+
+</p>
+
+</div>
+
+
+
+
+</div>
+</div>
+</div>
+
+
+
+<div id="doc" class="container-fluid" style="text-align:center;padding-bottom:35px;background: rgb(132,129,160);color:white">
+<div class="container">
+<div class="row">
+
+<div class="col-md-12">
+<h3 style="margin-top:35px;margin-bottom:35px;font-weight:lighter">Документация</h3>
+</div>
+
+
+<div class="col-md-4" ></div>
+<div class="col-md-4 col-xs-12 doc-tex" style="text-align:left;color:white;">
+
+<p><img src="http://diplom-invoice.ru/iskra/wp/wp-content/themes/iskra/pdf.png"> <a style="color:white;" href="{{cont.linkone}}" >{{cont.linktone}}</a>
+</p>
+
+<p><img src="http://diplom-invoice.ru/iskra/wp/wp-content/themes/iskra/pdf.png"> <a style="color:white;" href="{{cont.linktwo}}" >{{cont.linkttwo}}</a>
+</p>
+
+<p><img src="http://diplom-invoice.ru/iskra/wp/wp-content/themes/iskra/pdf.png"> <a style="color:white;" href="{{cont.linkthree}}" >{{cont.linktthree}}</a>
+</p>
+
+<p><img src="http://diplom-invoice.ru/iskra/wp/wp-content/themes/iskra/dxf.png"> <a style="color:white;" href="{{cont.linkfour}}" >{{cont.linktfour}}</a>
+</p>
+
+<p><img src="http://diplom-invoice.ru/iskra/wp/wp-content/themes/iskra/dxf.png"> <a style="color:white;" href="{{cont.linkfive}}" >{{cont.linktfive}}</a>
+
+</p>
+
+</div>
+<div class="col-md-4"></div>
+
+
+</div>
+</div>
+</div>
+
+
+<div class="container-fluid" style="text-align:center;padding-bottom:35px;padding-top:35px;background: url(http://diplom-invoice.ru/iskra/wp/wp-content/themes/iskra/down.png) center center no-repeat;background-size: cover;background-color:#ddd;">
+<div class="container">
+<div class="row">
+
+
+
+<div class="col-md-4" ></div>
+<div class="col-md-4" style="text-align:center">
+
+<img src="http://diplom-invoice.ru/iskra/wp/wp-content/themes/iskra/logo_K15.png" style="width:47%;"><br>
+<!--<h5 style="font-weight: lighter;color:white;text-align: center;color: rgb(132,129,160);margin-top:10px;">Барьер искрозащиты</h5>-->
+<button type="button" class="btn btn-primary" style="margin-top:20px;" data-toggle="modal" data-target="#exampleModal">Оставить заявку</button>
+</div>
+<div class="col-md-4 bot-ad-tel">
+<a href="https://yandex.ru/maps/172/ufa/?whatshere%5Bpoint%5D=56.058090%2C54.793371&whatshere%5Bzoom%5D=17&mode=whatshere&ll=56.058090%2C54.793259&z=17">
+<h4 style="color:rgb(132,129,160);font-weight:lighter;">
+
+ООО «Эй энд Ти Текнолоджис» <br>
+
+450081 г. Уфа ул. Шота <br>
+
+Руставели, д. 51, к. 1, помещение <br>
+
+003
+
+</h4>
+</a>
+<a href="tel:{{cont.phone}}">
+<h3 style="color:rgb(132,129,160);font-weight:lighter;margin-top:28px;">{{cont.phone}}</h3>
+</a>
+
+</div>
+
+
+
+
+
+</div>
+</div>
+</div>
+<app-scripts></app-scripts>
