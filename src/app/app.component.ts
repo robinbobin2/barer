@@ -17,6 +17,8 @@ export class Contents {
   texttwo;
   textthree;
   textfour;
+  linkfive;
+  linktfive;
 
 }
 var content = [];
@@ -41,6 +43,8 @@ export class AppComponent {
 				  linktfour: contents[0].acf.linktfour,
 				  linkthree: contents[0].acf.linkthree,
 				  linktone: contents[0].acf.linktone,
+				  linktfive: contents[0].acf.linktfive,
+				  linkfive: contents[0].acf.linkfive,
 				  linktthree: contents[0].acf.linktthree,
 				  linkttwo: contents[0].acf.linkttwo,
 				  title_one: contents[0].acf.title_one,

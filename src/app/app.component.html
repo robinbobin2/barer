@@ -13,24 +13,24 @@ background: rgb(132,129,160);color:white">
 </div>
 
 <div class="col-md-3">
-<img src="http://diplom-invoice.ru/iskra/wp/wp-content/themes/iskra/p1.gif" style="width:45%;">
-<p>{{cont.textone}}</p>
+<img src="http://diplom-invoice.ru/iskra/wp/wp-content/themes/iskra/p11.png" style="width:45%;">
+<p [innerHTML]="cont.textone"></p>
 </div>
 
 <div class="col-md-3">
-<img src="http://diplom-invoice.ru/iskra/wp/wp-content/themes/iskra/p2.png" style="width:50%;">
-<p>{{cont.texttwo}}</p>
+<img src="http://diplom-invoice.ru/iskra/wp/wp-content/themes/iskra/p21.png" style="width:50%;">
+<p [innerHTML]="cont.texttwo"></p>
 </div>
 
 <div class="col-md-3">
-<img src="http://diplom-invoice.ru/iskra/wp/wp-content/themes/iskra/p3.png" style="width:50%;">
-<p>{{cont.textthree}}
+<img src="http://diplom-invoice.ru/iskra/wp/wp-content/themes/iskra/p31.png" style="width:50%;">
+<p [innerHTML]="cont.textthree">
 </p>
 </div>
 
 <div class="col-md-3">
 <img src="http://diplom-invoice.ru/iskra/wp/wp-content/themes/iskra/p4.png" style="width:50%;">
-<p>{{cont.textfour}}
+<p [innerHTML]="cont.textfour">
 </p>
 </div>
 
@@ -44,7 +44,7 @@ background: rgb(132,129,160);color:white">
 <div class="row">
 
 <div class="col-md-12">
-<h3 style="margin-top:35px;margin-bottom:35px;font-weight: lighter;">{{cont.titletwo}}</h3>
+<h3 style="margin-top:35px;margin-bottom:35px;font-weight: lighter;" [innerHTML]="cont.titletwo"> </h3>
 </div>
 
 <div class="col-md-12" style="text-align:center">
@@ -52,8 +52,7 @@ background: rgb(132,129,160);color:white">
 </div>
 
 <div class="col-md-12" style="text-align:left;margin-top:35px;">
-<p>
-{{cont.textfive}}
+<p [innerHTML]="cont.textfive">
 
 </p>
 
@@ -145,4 +144,3 @@ background: rgb(132,129,160);color:white">
 </div>
 </div>
 </div>
-<app-scripts></app-scripts>

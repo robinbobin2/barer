@@ -10,20 +10,385 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+  <script tpye="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular.js"></script>
+  <!-- cmelo-angular-sticky JS file -->
+<style type="text/css">.selectedpost {
+  background: rgba(0,0,0,.2);
+} 
+.selectedbutton {
+  position: fixed;
+  bottom: 10px;
+}
+#header-fixed { 
+    position: fixed; 
+    top: 100px; 
+}
+
+  html,body{width:100%;height:100%}
+  
+  .ng-hide-add, .ng-hide-remove {
+  transition: all 0.5s linear;
+}
+
+  .btn{border-radius:20px;background: rgb(132,129,160);border:none}
+  .btn:hover{background: rgb(102,99,130);cursor:pointer}
+  
+  .thead-inverse th {
+    color: #fff;
+    background-color: rgb(132,129,160);
+}
+  
+
+         .box {
+         position: relative;
+         display: inline-block;
+         width: auto%;
+         height: auto;
+         
+         border-radius:20px;
+         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+         
+         -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+         transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+         z-index:1;
+         }
+         .box::after {
+         content: "";
+        border-radius:20px;
+         position: absolute;
+         z-index: -1;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+         opacity: 0;
+         -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+         transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+         }
+         .box:hover {
+         cursor:pointer;
+         -webkit-transform: scale(1.25, 1.25);
+         transform: scale(1.25, 1.25);
+         }
+         .box:hover::after {
+         opacity: 1;
+         }
+
+     .btn-primary.focus, .btn-primary:focus {
+    box-shadow: 0 0 0 0px rgba(0,123,255,.5);
+}
+
+.btn.focus, .btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0px rgba(0,123,255,.25);
+}
+
+     
+      .sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sorttable_nosort):after { 
+    content: " \25B4\25BE" 
+}
+
+td,th,tr {border-color:#f8f8f8}
+
+.table-bordered td,th,tr {border-color:#f8f8f8}
+  
+th:hover{cursor:pointer;}
+
+/* Default to hide the video on all devices */
+#video{display:none}
+
+/* Default to display the image on all devices */
+#videosubstitute{display:block;width:auto;height:100%;}
+.hev {
+  cursor: pointer;
+}
+
+#fullScreenDiv{
+    width:100%;
+    min-height: 100%; 
+   /* Set the height to match that of the viewport. */
+    height: 100vh;
+    width: 100%;
+    padding:0!important;
+    margin: 0!important;
+    background-color: gray;
+    position: relative;
+}
+#video{    
+    width: 100vw; 
+    height: auto;
+    object-fit: cover;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  #video{
+    height: 150%;
+    top: -100%;
+  }
+  #videosubstitute{
+    display:block;
+    width: 100%;
+    height: auto;}
+}
+
+@media (max-aspect-ratio: 16/9) {
+  #video {
+    width: 150%;
+    left: -100%;
+  }
+  #videosubstitute{display:block;width:100%;height:100%;}
+}
+/*if there is 992  pixels or more, then display the video but hide the image*/
+@media only screen and (min-width : 992px) {
+#video{display:block;}
+#videosubstitute{display:none}
+}   
+
+/* The container for our text and stuff */
+#messageBox{
+    position: absolute;  
+  top: 0;  
+  left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height:100%;
+}
+
+
+
+
+/*.hev:hover + .show {
+position: static;
+  visibility:visible;
+  opacity:1;
+  transition-delay:0s;
+}*/
+
+#video-viewport { width: 100%; height: 100%; overflow:hidden;}
+video { display: block; width: 100%; height: 100%; }
+
+.fullsize-video-bg { height: 85%;height: auto; }
+
+
+video:hover{cursor:pointer}
+
+/*.fullsize-video-bg:before { content: ""; background: rgba(114,45,0,.35); position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
+.fullsize-video-bg:after { content: ""; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgTWFjaW50b3NoIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjI4RkZBQTgzNzg1NzExRTU4NTQyODc3OUM4MTZGMUREIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjI4RkZBQTg0Nzg1NzExRTU4NTQyODc3OUM4MTZGMUREIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MjhGRkFBODE3ODU3MTFFNTg1NDI4Nzc5QzgxNkYxREQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MjhGRkFBODI3ODU3MTFFNTg1NDI4Nzc5QzgxNkYxREQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz66uHInAAAAIUlEQVR42mL5//8/AyMj42YGIGBigABfEMEIkoEBgAADAKvuBwVS8BAjAAAAAElFTkSuQmCC); background-size: 3px 3px; position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+
+
+.fullsize-video-bg .inner { display: table; width: 100%; max-width: 24em; height: 100%; margin: 0 auto; padding: 0; position: relative; z-index: 2; text-shadow: 0 1px 5px rgba(0,0,0,.5); }
+.fullsize-video-bg .inner > div { text-align: center; display: table-cell; vertical-align: middle; padding: 0 2em; } border-bottom:1px solid #ddd*/
+
+.tbl{text-align:center;border-color:#fff;font-size:15px;margin-bottom:0px;}
+
+.top-bl-left{width:250px;height:50px;border-radius:40px;
+background:#fff;border:2px solid rgb(142,139,170);float:right;}
+
+.top-bl-right{width:250px;height:50px;border-radius:40px;
+background:#fff;border:2px solid rgb(142,139,170);float:left;}
+
+
+.cntr-bl-left{width:250px;height:50px;border-radius:40px;background:#fff;margin-top:35px;border:2px solid rgb(142,139,170);}
+.cntr-bl-left-one{width:250px;height:50px;border-radius:40px;background:#fff;margin-top:35px;margin-left:50px;border:2px solid rgb(142,139,170);}
+.cntr-bl-left-two{width:250px;height:50px;border-radius:40px;background:#fff;margin-top:35px;margin-left:50px;border:2px solid rgb(142,139,170);}
+
+.cntr-bl-right{width:250px;height:50px;border-radius:40px;background:#fff;margin-top:35px;border:2px solid rgb(142,139,170);}
+.cntr-bl-right-one{width:250px;height:50px;border-radius:40px;background:#fff;margin-top:35px;margin-left:-50px;border:2px solid rgb(142,139,170);}
+.cntr-bl-right-two{width:250px;height:50px;border-radius:40px;background:#fff;margin-top:35px;margin-left:-50px;border:2px solid rgb(142,139,170);}
+
+.bot-bl-left{width:250px;height:50px;border-radius:40px;
+background:#fff;border:2px solid rgb(142,139,170);float:right;margin-top:-20px;}
+.bot-bl-right{width:250px;height:50px;border-radius:40px;
+background:#fff;border:2px solid rgb(142,139,170);float:left;margin-top:-20px;}
+
+.bot-ad-tel{text-align: left;}
+
+.cep{width:60%;}
+      .first{margin-top:30px;text-align:right;}
+      .poj-right{margin-top:30px;text-align:left;padding-left:35px;}
+      .second{}
+      .poj-right h4 {font-weight: lighter;color:white;text-align: left;color: rgb(132,129,160);margin-top:20px;margin-left:-15px;font-size:1.3rem}
+      .poj-right img{width:60%;margin-top:18%}
+      .logo-hide{display:none}
+      
+      .left-first{margin-top:30px;}
+      .right-first{margin-top:30px;}
+      
+      
+      
+      .nav-item{line-height:60px;}
+      
+      
+      .ova-left{width:230px;height:65px;border-radius:40px;background:rgb(132,129,160);
+      background:rgb(199,123,123);margin:0 auto;margin-top:5px;line-height:45px;color:white;
+      padding:5px;width:85%;float:right;font-size:17px;border: 5px solid #ddd;}
+      
+      .ova-center{width:230px;height:65px;border-radius:40px;background:rgb(132,129,160);
+      background:rgb(199,123,123);margin:0 auto;margin-top:5px;line-height:45px;color:white;
+      padding:5px;width:85%;font-size:17px;border: 5px solid #ddd;}
+      
+      
+         .ova-right{width:230px;height:65px;border-radius:40px;background:rgb(132,129,160);
+      background:rgb(199,123,123);margin:0 auto;margin-top:5px;line-height:45px;color:white;
+      padding:5px;width:85%;float:left;font-size:17px;border: 5px solid #ddd;}
+      
+@media only screen and (max-width : 992px) {
     
-  </script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
-<script type="text/javascript">var app = angular.module('iskra', ['ngRoute']);
-$scope.showPopover = function() {
-  $scope.popoverIsVisible = true; 
-};
+    
+    .ova-left{float:none;margin:0 auto;margin-top:5px;}
+    .ova-center{float:none;margin:0 auto;margin-top:5px;}
+    .ova-right{float:none;margin:0 auto;margin-top:5px;}
+    
+    .tbl{font-size:8px}
+    
+    .top-bl-left{float:none;margin:0 auto;}
+    .top-bl-right{float:none;margin:0 auto;margin-top:5px;}
+    
+    .cntr-bl-left{margin:0 auto;margin-top:5px;}
+    .cntr-bl-left-one{margin:0 auto;margin-top:5px;}
+    .cntr-bl-left-two{margin:0 auto;margin-top:5px;}
+    
+    .cntr-bl-right{margin:0 auto;margin-top:5px;}
+    .cntr-bl-right-one{margin:0 auto;margin-top:5px;}
+    .cntr-bl-right-two{margin:0 auto;margin-top:5px;}
+    
+    
+    
+    .bot-bl-left{float:none;margin:0 auto;margin-top:5px;}
+    .bot-bl-right{float:none;margin:0 auto;margin-top:5px;}
+    
+    
+    .bot-ad-tel{text-align: center;margin-top:25px;}
+    
+    .doc-tex{font-size:13px;}
+    .tbl .input-group-sm>.form-control{font-size:9px}
+    .cep{width:100%;}
+    
+    .logo-menu{display:none;}
+    
+    .first{text-align: center;margin-top:10px;}
+    .second{margin-top:10px;}
+    .poj-right{text-align:center;padding-left:0px;}
+    
+    .poj-right h4{text-align: center;color: rgb(132,129,160);margin-top:10px;margin-left:0;font-size:1.3rem}
+    .poj-right img{margin-top:10px;}
+    .logo-hide{display:block}
+    
+    .left-first{margin-top:10px;}
+    
+    .right-first{margin-top:10px;}
+    
+    }
+  
+  
+  .navbar {
+    -webkit-transition: all 0.6s ease-out;
+    -moz-transition: all 0.6s ease-out;
+    -o-transition: all 0.6s ease-out;
+    -ms-transition: all 0.6s ease-out;
+    transition: all 0.6s ease-out;
+    background-color:#fff;background:#fff;
+    padding-top:35px;padding-bottom:35px; 
+    
+}
 
-$scope.hidePopover = function () {
-  $scope.popoverIsVisible = false;
-};
+.navbar.scrolled {
 
-</script>
+
+margin-top:0px;
+padding-top:3px;
+padding-bottom:3px;
+}
+  
+  .navbar img{width:101px;     margin-top:10px;
+      -webkit-transition: all 0.6s ease-out;
+    -moz-transition: all 0.6s ease-out;
+    -o-transition: all 0.6s ease-out;
+    -ms-transition: all 0.6s ease-out;
+    transition: all 0.6s ease-out;}
+  
+  .navbar.scrolled img{height:42px;width:auto;margin-top:7px;}
+      .navbar.scrolled .nav-item{line-height:40px;}
+      
+      
+
+      
+      
+table{
+  border-collapse:collapse;
+  width:100%;
+}
+
+.blue{
+  /*border:0px solid #1ABC9C;*/
+}
+
+.blue thead{
+  /*background:#1ABC9C;*/
+}
+
+.purple{
+  /*border:0px solid #9B59B6;*/
+}
+
+.purple thead{
+  /*background:#9B59B6;*/
+}
+
+thead{
+  color:white;
+}
+
+th,td{
+  text-align:center;
+  /*padding:5px 0;*/
+}
+
+tbody tr:nth-child(even){
+  /*background:#ECF0F1;*/
+}
+
+tbody tr:hover{
+background:#BDC3C7;
+  /*color:#FFFFFF;*/
+}
+
+.fixed{
+margin-left:4px;
+  top:62px;
+  position:fixed;
+  width:auto;
+  display:none;
+  border:none;
+  z-index:100
+}
+
+@media only screen and (max-width : 992px) {
+
+.fixed{top:49px;margin-left:1px;}
+.navbar.scrolled .nav-item{line-height:24px;}
+.navbar .form-inline {margin-left:0px;}
+
+}
+
+.scrollMore{
+  margin-top:600px;
+}
+
+.up{
+  cursor:pointer;
+}
+.is-sticky {
+  z-index: 100 !important;
+}
+</style>
 </head>
 
 <body id="product">
@@ -55,7 +420,7 @@ $scope.hidePopover = function () {
           
           
         <li class="nav-item">
-        <a class="nav-link" href="#product" style="font-size:14px;">Продукция <span class="sr-only">(current)</span></a>
+        <a class="nav-link" id="verh" href="#product" style="font-size:14px;">Продукция <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#use" style="font-size:14px;">Применение</a>
@@ -158,7 +523,7 @@ $scope.hidePopover = function () {
 <div style="width:78%;height:3px;background:url('http://diplom-invoice.ru/iskra/wp/wp-content/themes/iskra/pol.png') center center;background-size:100% auto;margin:0 auto;margin-top:100px;"></div>
 
 
-<div class="row">
+<div class="row" >
 <div class="col-md-12">
 
 </div>
@@ -338,17 +703,15 @@ $scope.hidePopover = function () {
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="http://diplom-invoice.ru/iskra/global-scripts.ru" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
-  <script src="http://diplom-invoice.ru/iskra/wp/wp-content/themes/iskra/sorttable.js"></script>
-  <script src="http://diplom-invoice.ru/jquery.fixme.min.js"></script>
-    <script type="text/javascript">
-
-console.log("asd")
-
-  $("#navbar").on("click", "a.nav-link", function(){
+  <!-- <script src="http://diplom-invoice.ru/jquery.fixme.min.js"></script> -->
+  <script type="text/javascript">
+      $("#navbar").on("click", "a.nav-link", function(){
     var idtop = $($(this).attr("href")).offset().top;
     $('html,body').animate({scrollTop: idtop - 46}, 500);
     return false;
@@ -375,17 +738,20 @@ $( ".hev" ).click(function() {
     // Animation complete.
   });
 });
+  console.log("SORT!!");
+  setTimeout(function(){
 $(function() {
+  console.log("DELAY");
 var enableSubmit = function(ele) {
     $(ele).removeAttr("disabled");
 }
   $(".kk :checkbox").change(function() {
-    $("#uncheck").attr("disabled", true);
-    setTimeout(function() { enableSubmit("#uncheck") }, 1000);
+    console.log("check");
     var arr = $(":checkbox:checked").map(function() { return $(this).parents("tr").html(); }).get();
-    $("#myDiv").html('<thead class="thead-inverse" style="text-align:center"><tr><th  style="text-align:center" class="sorttable_nosort"></th><th  style="text-align:center" class="sorttable_nosort">Название</th><th  style="text-align:center">Uo, B</th><th  style="text-align:center">Io, mA</th><th  style="text-align:center">Каналы</th><th  style="text-align:center">Наличие</th><th  style="text-align:center" class="sorttable_nosort">Количество</th></tr></thead><tr>'+arr.join('</tr>'));
+    $("#table-main").html('<thead class="thead-inverse" style="text-align:center"><tr><th  style="text-align:center" class="sorttable_nosort"></th><th  style="text-align:center" class="sorttable_nosort">Название</th><th  style="text-align:center">Uo, B</th><th  style="text-align:center">Io, mA</th><th  style="text-align:center">Каналы</th><th  style="text-align:center">Наличие</th><th  style="text-align:center" class="sorttable_nosort">Количество</th></tr></thead><tr>'+arr.join('</tr>'));
   });
-});
+})
+}, 7000);
 
 function ToggleBGColour(item) {
     var td = $(item).parent();      
@@ -497,51 +863,14 @@ if($('.navbar').length > 0){
         checkScroll();
     });
 }
-        ;(function($) {
-   $.fn.fixMe = function() {
-      return this.each(function() {
-         var $this = $(this),
-            $t_fixed;
-         function init() {
-            $this.wrap('<div class="container" />');
-            $t_fixed = $this.clone();
-            $t_fixed.find("tbody").remove().end().addClass("fixed").insertBefore($this);
-            resizeFixed();
-         }
-         function resizeFixed() {
-            $t_fixed.find("th").each(function(index) {
-               $(this).css("width",$this.find("th").eq(index).outerWidth()+"px");
-            });
-         }
-         function scrollFixed() {
-            var offset = $(this).scrollTop(),
-            tableOffsetTop = $this.offset().top-49,
-            tableOffsetBottom = tableOffsetTop + $this.height() - $this.find("thead").height();
-            if(offset < tableOffsetTop || offset > tableOffsetBottom)
-               $t_fixed.hide();
-            else if(offset >= tableOffsetTop && offset <= tableOffsetBottom && $t_fixed.is(":hidden"))
-               $t_fixed.show();
-         }
-         $(window).resize(resizeFixed);
-         $(window).scroll(scrollFixed);
-         init();
-      });
-   };
-});
-console.log("jQuery!!!");
-$(document).ready(function(){
-   $("table").fixMe();
-   $(".up").click(function() {
-      $('html, body').animate({
-      scrollTop: 0
-   }, 2000);
- });
+$("#navbar").on("click", "#verh", function(){
+    var idtop = $($(this).attr("href")).offset().top;
+    $('html,body').animate({scrollTop: idtop - 246}, 500);
+    return false;
 });
 
-   
-     
-        
-        
-</script>   
+  </script>
+
+  <script src="http://diplom-invoice.ru/iskra/wp/wp-content/themes/iskra/sorttable.js"></script>
 </body>
 </html>

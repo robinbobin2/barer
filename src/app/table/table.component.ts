@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Http } from '@angular/http';
 var boards: any;
+const url = 'http://diplom-invoice.ru/iskra/wp/wp-content/themes/iskra/sorttable.js';
 // var posts: any;
 let posts=[];
 var title ;
@@ -56,6 +57,17 @@ export class Post {
   styleUrls: ['./table.component.css'],
 })
 export class TableComponent {
+	    loadAPI: Promise<any>;
+
+    public loadScript() {
+        console.log('preparing to load...')
+        let node = document.createElement('script');
+        node.src = url;
+        node.type = 'text/javascript';
+        node.async = true;
+        node.charset = 'utf-8';
+        document.getElementsByTagName('head')[0].appendChild(node);
+    }
 value = 0;
 name = '';
 idd = '';
@@ -101,8 +113,59 @@ selectedPost17: Post[];
 
   onEnter0(value: number, name: string) { this.value = value;
   	this.count0 = value;
-// console.log(name +":" +value);
    }
+     onEnter1(value: number, name: string) { this.value = value;
+  	this.count1 = value;
+   }
+     onEnter2(value: number, name: string) { this.value = value;
+  	this.count2 = value;
+   }
+     onEnter3(value: number, name: string) { this.value = value;
+  	this.count3 = value;
+   }
+     onEnter4(value: number, name: string) { this.value = value;
+  	this.count4 = value;
+   }
+     onEnter5(value: number, name: string) { this.value = value;
+  	this.count5 = value;
+   }
+     onEnter6(value: number, name: string) { this.value = value;
+  	this.count6 = value;
+   }
+     onEnter7(value: number, name: string) { this.value = value;
+  	this.count7 = value;
+   }
+     onEnter8(value: number, name: string) { this.value = value;
+  	this.count8 = value;
+   }
+     onEnter9(value: number, name: string) { this.value = value;
+  	this.count9 = value;
+   }
+     onEnter10(value: number, name: string) { this.value = value;
+  	this.count10 = value;
+   }
+     onEnter11(value: number, name: string) { this.value = value;
+  	this.count11 = value;
+   }
+     onEnter12(value: number, name: string) { this.value = value;
+  	this.count0 = value;
+   }
+     onEnter13(value: number, name: string) { this.value = value;
+  	this.count13 = value;
+   }
+     onEnter14(value: number, name: string) { this.value = value;
+  	this.count14 = value;
+   }
+     onEnter15(value: number, name: string) { this.value = value;
+  	this.count15 = value;
+   }
+     onEnter16(value: number, name: string) { this.value = value;
+  	this.count16 = value;
+   }
+     onEnter17(value: number, name: string) { this.value = value;
+  	this.count17 = value;
+   }
+
 //    pushMe(idd: string, value: number, post: Post[], $event) { 
 //    	this.idd = name;
 //    	this.value;
@@ -125,49 +188,49 @@ onCount0(post: Post[]) : void {
 	console.log(this.selectedPost0);
 }
 onCount1(post: Post[]) : void {
-	this.count1 = this.count1+1;
+	this.count1 ++;
 	if(this.count1 > 0){
 	  this.selectedPost1 = post;
 	} 
 	// console.log(this.count1);
 }
 onCount2(post: Post[]) : void {
-	this.count2 = this.count2+1;
+	this.count2 ++;
 	if(this.count2 > 0){
 	  this.selectedPost2 = post;
 	} 
 	// console.log(this.count0);
 }
 onCount3(post: Post[]) : void {
-	this.count3 = this.count3+1;
+	this.count3 ++;
 	if(this.count3 > 0){
 	  this.selectedPost3 = post;
 	} 
 	// console.log(this.count0);
 }
 onCount4(post: Post[]) : void {
-	this.count4 = this.count4+1;
+	this.count4 ++;
 	if(this.count4 > 0){
 	  this.selectedPost4 = post;
 	} 
 	// console.log(this.count0);
 }
 onCount5(post: Post[]) : void {
-	this.count5 = this.count5+1;
+	this.count5 ++;
 	if(this.count5 > 0){
 	  this.selectedPost5 = post;
 	} 
 	// console.log(this.count1);
 }
 onCount6(post: Post[]) : void {
-	this.count6 = this.count6+1;
+	this.count6 ++;
 	if(this.count6 > 0){
 	  this.selectedPost6 = post;
 	} 
 	// console.log(this.count0);
 }
 onCount7(post: Post[]) : void {
-	this.count7 = this.count7+1;
+	this.count7 ++;
 	if(this.count7 > 0){
 	  this.selectedPost7 = post;
 	} 
@@ -181,63 +244,63 @@ onCount8(post: Post[]) : void {
 	// console.log(this.count0);
 }
 onCount9(post: Post[]) : void {
-	this.count9 = this.count9+1;
+	this.count9 ++;
 	if(this.count9 > 0){
 	  this.selectedPost9 = post;
 	} 
 	// console.log(this.count1);
 }
 onCount10(post: Post[]) : void {
-	this.count10 = this.count10+1;
+	this.count10 ++;
 	if(this.count10 > 0){
 	  this.selectedPost10 = post;
 	} 
 	// console.log(this.count0);
 }
 onCount11(post: Post[]) : void {
-	this.count11 = this.count11+1;
+	this.count11 ++;
 	if(this.count11 > 0){
 	  this.selectedPost11 = post;
 	} 
 	// console.log(this.count0);
 }
 onCount12(post: Post[]) : void {
-	this.count12 = this.count12+1;
+	this.count12++;
 	if(this.count12 > 0){
 	  this.selectedPost12 = post;
 	} 
 	// console.log(this.count0);
 }
 onCount13(post: Post[]) : void {
-	this.count13 = this.count13+1;
+	this.count13 ++;
 	if(this.count13 > 0){
 	  this.selectedPost13 = post;
 	} 
 	// console.log(this.count1);
 }
 onCount14(post: Post[]) : void {
-	this.count14 = this.count14+1;
+	this.count14++;
 	if(this.count14 > 0){
 	  this.selectedPost14 = post;
 	} 
 	// console.log(this.count0);
 }
 onCount15(post: Post[]) : void {
-	this.count15 = this.count15+1;
+	this.count15 ++;
 	if(this.count15 > 0){
 	  this.selectedPost15 = post;
 	} 
 	// console.log(this.count0);
 }
 onCount16(post: Post[]) : void {
-	this.count16 = this.count16+1;
+	this.count16++;
 	if(this.count16 > 0){
 	  this.selectedPost16 = post;
 	} 
 	// console.log(this.count0);
 }
 onCount17(post: Post[]) : void {
-	this.count17 = this.count17+1;
+	this.count17 ++;
 	if(this.count17 > 0){
 	  this.selectedPost17 = post;
 	} 
@@ -414,6 +477,7 @@ onDecrease(post: Post[]): void {
 	}
 	// console.log(this.count);
 }
+
 // posts: Post[] = [];
 	result:any;
   constructor(private http:Http) { 
@@ -445,6 +509,12 @@ http.get("http://diplom-invoice.ru/iskra/wp/wp-json/wp/v2/table").subscribe(resp
   });
 
 
+  }
+  ngAfterViewInit() {
+this.loadAPI = new Promise((resolve) => {
+            console.log('resolving promise...');
+            this.loadScript();
+        });
   }
   // console.log(title);
 }
