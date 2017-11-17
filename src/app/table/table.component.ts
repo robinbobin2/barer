@@ -1,7 +1,10 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Http } from '@angular/http';
 var boards: any;
-const url = 'http://diplom-invoice.ru/iskra/wp/wp-content/themes/iskra/sorttable.js';
+const url = 'http://diplom-invoice.ru/iskra//wp/wp-content/themes/iskra/sorttable.js';
+
+const scr = 'http://diplom-invoice.ru/iskra/fixme.js';
+// const scr = 'http://diplom-invoice.ru/iskra/script.js';
 // var posts: any;
 let posts=[];
 var title ;
@@ -68,6 +71,15 @@ export class TableComponent {
         node.charset = 'utf-8';
         document.getElementsByTagName('head')[0].appendChild(node);
     }
+    public loadMore() {
+        console.log('preparing to load...')
+        let node = document.createElement('script');
+        node.src = scr;
+        node.type = 'text/javascript';
+        node.async = true;
+        node.charset = 'utf-8';
+        document.getElementsByTagName('head')[0].appendChild(node);
+    }
 value = 0;
 name = '';
 idd = '';
@@ -90,6 +102,11 @@ public count14=0;
 public count15=0;
 public count16=0;
 public count17=0;
+public namae;
+public comm;
+public comp;
+public email;
+public tel;
 selectedPost: Post[];
 selectedPost0: Post[];
 selectedPost1: Post[];
@@ -110,7 +127,111 @@ selectedPost15: Post[];
 selectedPost16: Post[];
 selectedPost17: Post[];
 // selectedPost18: Post[];
+deletePost0() {
+	this.count0 = 0;
+	this.selectedPost0 = undefined;
 
+}
+deletePost1() {
+	this.count1 = 0;
+	this.selectedPost1 = undefined;
+
+}
+deletePost2() {
+	this.count2 = 0;
+	this.selectedPost2 = undefined;
+
+}
+deletePost3() {
+	this.count3 = 0;
+	this.selectedPost3 = undefined;
+
+}
+deletePost4() {
+	this.count4 = 0;
+	this.selectedPost4 = undefined;
+
+}
+deletePost5() {
+	this.count5 = 0;
+	this.selectedPost5 = undefined;
+
+}
+deletePost6() {
+	this.count6 = 0;
+	this.selectedPost6 = undefined;
+
+}
+deletePost7() {
+	this.count7 = 0;
+	this.selectedPost7 = undefined;
+
+}
+deletePost8() {
+	this.count8 = 0;
+	this.selectedPost8 = undefined;
+
+}
+deletePost9() {
+	this.count9 = 0;
+	this.selectedPost9 = undefined;
+
+}
+deletePost10() {
+	this.count10 = 0;
+	this.selectedPost10 = undefined;
+
+}
+deletePost11() {
+	this.count11 = 0;
+	this.selectedPost11 = undefined;
+
+}
+deletePost12() {
+	this.count12 = 0;
+	this.selectedPost12 = undefined;
+
+}
+deletePost13() {
+	this.count13 = 0;
+	this.selectedPost13 = undefined;
+
+}
+deletePost14() {
+	this.count14 = 0;
+	this.selectedPost14 = undefined;
+
+}
+deletePost15() {
+	this.count15 = 0;
+	this.selectedPost15 = undefined;
+
+}
+deletePost16() {
+	this.count16 = 0;
+	this.selectedPost16 = undefined;
+
+}
+deletePost17() {
+	this.count17 = 0;
+	this.selectedPost17 = undefined;
+
+}
+onNamae(value) { this.value = value;
+  	this.namae = value;
+   }
+ onComm(value) { this.value = value;
+  	this.comm = value;
+   }
+ onComp(value) { this.value = value;
+  	this.comp = value;
+   }
+ onEmail(value) { this.value = value;
+  	this.email = value;
+   }
+  onTel(value) { this.value = value;
+  	this.tel = value;
+   }
   onEnter0(value: number, name: string) { this.value = value;
   	this.count0 = value;
    }
@@ -510,10 +631,13 @@ http.get("http://diplom-invoice.ru/iskra/wp/wp-json/wp/v2/table").subscribe(resp
 
 
   }
+  onSubmit() {
+  }
   ngAfterViewInit() {
 this.loadAPI = new Promise((resolve) => {
             console.log('resolving promise...');
             this.loadScript();
+            this.loadMore();
         });
   }
   // console.log(title);

@@ -25,29 +25,27 @@
 </div>
 </div> -->
 
-
-<table id="table-main" class="table table-hover sortable table-bordered kk table-condensed table-sm tbl blue" style="text-align:center;border-color:#fff;font-size:15px">
-  <thead  style="text-align:center;border-color:#fff;font-size:15px; width: 1190px;" ng-sticky [offSet]="60" [addClass]="'is-sticky'" class="thead-inverse" style="text-align:center">
+<div class="content">
+<table id="table-main" class="table sortable table-hover table-bordered kk table-condensed table-sm tbl blue" style="text-align:center;border-color:#fff;">
+  <thead class="" style="text-align:center;border-color:#fff;font-size:15px; width: 1190px;" class="thead-inverse " style="text-align:center">
+    
     <tr>
-      <!--<th  style="text-align:center" class="sorttable_nosort"></th>-->
-      <th style="text-align:center; width: 363px; height: 31px;" class="sorttable_nosort">Название</th>
-      <th  style="text-align:center" style="min-width: 25px; width: 140px;">Uo, B</th>
-      <th  style="text-align:center" style="min-width: 25px; width: 156px;">Io, mA</th>
-    <th  style="text-align:center;  width: 179px;">Каналы</th>
-      <th  style="text-align:center; width: 197px;">Наличие</th>
-      <th  style="text-align:center; width: 106px;" class="sorttable_nosort">Количество</th>
+      <th style="text-align:center; width: 345px; height: 31px; min-width: 60px;" class="sorttable_nosort namae">Название</th>
+      <th style="text-align:center" style="min-width: 25px; width: 133px;" class="sorttable_numeric">Uo, B</th>
+      <th style="text-align:center" style="min-width: 25px; width: 148px;" class="sorttable_numeric">Io, mA</th>
+    <th style="text-align:center;  width: 170px;" class="sorttable_numeric">Каналы</th>
+      <th style="text-align:center; width: 187px;">Наличие</th>
+      <th style="text-align:center; width: 100px;" class="sorttable_nosort">Количество</th>
     </tr>
   </thead>
   <tbody>
-    
     <tr class="hev" *ngFor="let post of posts; let i = index;" [ngClass]="{'selectedpost': (selectedPost0 && i==0) || (selectedPost1 && i==1) || (selectedPost2 && i==2) || (selectedPost3 && i==3)  || (selectedPost4 && i==4) || (selectedPost5 && i==5) || (selectedPost6 && i==6) || (selectedPost7 && i==7) || (selectedPost8 && i==8) || (selectedPost9 && i==9)  || (selectedPost10 && i==10) || (selectedPost11 && i==11) || (selectedPost12 && i==12) || (selectedPost13 && i==13)  || (selectedPost14 && i==14)  || (selectedPost15 && i==15) || (selectedPost16 && i==16)  || (selectedPost17 && i==17) }">
-<td style="display: none;"><input type="checkbox" id="field" name="field" class="" value=""></td>
-      <td style=" width: 363px;" class="sib">{{post.name}}</td>
-      <td style="width: 140px" class="sib">{{post.uo}}</td>
-      <td style="width: 156px" class="sib">{{post.io}}</td>
-      <td style="width: 179px" class="sib">{{post.chan}}</td>
-       <td style="width: 197px" class="sib">{{post.stock}}</td>
-      <td style="width: 106px;">
+      <td style=" width: 345px;" class="sib">{{post.name}}</td>
+      <td style="width: 133px" class="sib sorttable_numeric">{{post.uo}}</td>
+      <td style="width: 148px" class="sib sorttable_numeric">{{post.io}}</td>
+      <td style="width: 170px" class="sib sorttable_numeric">{{post.chan}}</td>
+       <td style="width: 187px" class="sib" sorttable_numeric>{{post.stock}}</td>
+      <td style="width: 100px;">
       <div *ngIf="i==0" class="input-group input-group-sm">
       <span class="input-group-btn">
         <button class="btn btn-secondary" type="button" (click)="onDecrease0(post)">-</button>
@@ -217,8 +215,10 @@
     </tr>
   </tbody>
 </table>
+</div>
 <div class="col-md-12" style="text-align:center;margin-top:35px;">
-<button type="button" class="btn btn-primary" [ngClass]="{'selectedbutton': selectedPost0 || selectedPost1 || selectedPost2 || selectedPost3 || selectedPost4 || selectedPost5 || selectedPost6 || selectedPost7 || selectedPost8 || selectedPost9 || selectedPost10 || selectedPost11 || selectedPost12 || selectedPost13 || selectedPost14 || selectedPost15 || selectedPost16 || selectedPost17 }" data-toggle="modal" data-target="#zak" id="uncheck" style="width:160px;">Заказать</button>
+<!-- [ngClass]="{'selectedbutton': selectedPost0 || selectedPost1 || selectedPost2 || selectedPost3 || selectedPost4 || selectedPost5 || selectedPost6 || selectedPost7 || selectedPost8 || selectedPost9 || selectedPost10 || selectedPost11 || selectedPost12 || selectedPost13 || selectedPost14 || selectedPost15 || selectedPost16 || selectedPost17 }"  -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#zak" id="uncheck" style="width:160px;">Заказать</button>
 
 
 </div>
@@ -233,30 +233,30 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+ <form ngNoForm action="http://diplom-invoice.ru/iskra/wp/order/" method="post">
       <div class="modal-body">
               
         <h3>Ваш заказ</h3>
-<table class="table table-hover sortable table-bordered table-condensed table-sm tbl" id="myDiv" style="width: 100%;">
+<table class="table table-hover table-bordered table-condensed table-sm tbl" style="width: 100%;">
   <thead class="thead-inverse" style="text-align:center">
     <tr>
-      <th style="text-align:center;vertical-align:middle;" class="sorttable_nosort"><button type=“button” class=“close”></button></th>
+      <th  style="text-align:center;vertical-align:middle;" class="sorttable_nosort"><button type=“button” class=“close”></button></th>
       <th  style="text-align:center;vertical-align:middle;" class="sorttable_nosort">Название</th>
       <th  style="text-align:center;vertical-align:middle;">Uo, B</th>
       <th  style="text-align:center;vertical-align:middle;">Io, mA</th>
-    <th  style="text-align:center;vertical-align:middle;">Каналы</th>
+      <th  style="text-align:center;vertical-align:middle;">Каналы</th>
       <th  style="text-align:center;vertical-align:middle;">Наличие</th>
       <th  style="text-align:center;vertical-align:middle;" class="sorttable_nosort">Количество</th>
     </tr>
   </thead>
-
 <tbody>
   <tr *ngIf="selectedPost0">
-    <td></td>
-    <td>{{selectedPost0.name}}</td>
-    <td>{{selectedPost0.uo}}</td>
-    <td>{{selectedPost0.io}}</td>
-    <td>{{selectedPost0.chan}}</td>
-    <td>{{selectedPost0.stock}}</td>
+    <td><button (click)="deletePost0()" class="">X</button></td>
+    <td>{{selectedPost0.name}} <input type="hidden" name="post0name" value="{{selectedPost0.name}}" /></td>
+    <td>{{selectedPost0.uo}} <input type="hidden" name="post0uo" value="{{selectedPost0.uo}}" /></td>
+    <td>{{selectedPost0.io}} <input type="hidden" name="post0io" value="{{selectedPost0.io}}" /></td>
+    <td>{{selectedPost0.chan}} <input type="hidden" name="post0chan" value="{{selectedPost0.chan}}" /></td>
+    <td>{{selectedPost0.stock}} <input type="hidden" name="post0count" value="{{count0}}" /></td>
     <td><div class="input-group input-group-sm">
       <span class="input-group-btn">
         <button class="btn btn-secondary" type="button" (click)="onDecrease0(selectedPost0)">-</button>
@@ -268,12 +268,12 @@
     </div></td>
   </tr>
   <tr *ngIf="selectedPost1">
-    <td></td>
-    <td>{{selectedPost1.name}}</td>
-    <td>{{selectedPost1.uo}}</td>
-    <td>{{selectedPost1.io}}</td>
-    <td>{{selectedPost1.chan}}</td>
-    <td>{{selectedPost1.stock}}</td>
+    <td><button (click)="deletePost1()" class="">X</button></td>
+    <td>{{selectedPost1.name}} <input type="hidden" name="post1name" value="{{selectedPost1.name}}" /> </td>
+    <td>{{selectedPost1.uo}} <input type="hidden" name="post1uo" value="{{selectedPost1.uo}}" /></td>
+    <td>{{selectedPost1.io}} <input type="hidden" name="post1io" value="{{selectedPost1.io}}" /> </td>
+    <td>{{selectedPost1.chan}} <input type="hidden"  name="post1chan" value="{{selectedPost1.chan}}" /></td>
+    <td>{{selectedPost1.stock}} <input type="hidden" name="post1count" value="{{count1}}" /></td>
     <td><div class="input-group input-group-sm">
       <span class="input-group-btn">
         <button class="btn btn-secondary" type="button" (click)="onDecrease1(selectedPost1)">-</button>
@@ -285,12 +285,12 @@
     </div></td>
   </tr>
   <tr *ngIf="selectedPost2">
-    <td></td>
-    <td>{{selectedPost2.name}}</td>
-    <td>{{selectedPost2.uo}}</td>
-    <td>{{selectedPost2.io}}</td>
-    <td>{{selectedPost2.chan}}</td>
-    <td>{{selectedPost2.stock}}</td>
+    <td><button (click)="deletePost2()" class="">X</button></td>
+    <td>{{selectedPost2.name}}<input type="hidden" name="post2name" value="{{selectedPost2.name}}" /> </td>
+    <td>{{selectedPost2.uo}} <input type="hidden" name="post2uo" value="{{selectedPost2.uo}}" /></td>
+    <td>{{selectedPost2.io}}<input type="hidden" name="post2io" value="{{selectedPost2.io}}" /></td>
+    <td>{{selectedPost2.chan}} <input type="hidden"  name="post2chan" value="{{selectedPost2.chan}}" /></td>
+    <td>{{selectedPost2.stock}} <input type="hidden" name="post2count" value="{{count2}}" /></td>
     <td><div class="input-group input-group-sm">
       <span class="input-group-btn">
         <button class="btn btn-secondary" type="button" (click)="onDecrease2(selectedPost2)">-</button>
@@ -302,12 +302,12 @@
     </div></td>
   </tr>
     <tr *ngIf="selectedPost3">
-    <td></td>
-    <td>{{selectedPost3.name}}</td>
-    <td>{{selectedPost3.uo}}</td>
-    <td>{{selectedPost3.io}}</td>
-    <td>{{selectedPost3.chan}}</td>
-    <td>{{selectedPost3.stock}}</td>
+    <td><button (click)="deletePost3()" class="">X</button></td>
+    <td>{{selectedPost3.name}} <input type="hidden" name="post3name" value="{{selectedPost3.name}}" /> </td>
+    <td>{{selectedPost3.uo}} <input type="hidden" name="post3uo" value="{{selectedPost3.uo}}" /></td>
+    <td>{{selectedPost3.io}} <input type="hidden" name="post3io" value="{{selectedPost3.io}}" /></td>
+    <td>{{selectedPost3.chan}} <input type="hidden"  name="post3chan" value="{{selectedPost3.chan}}" /></td>
+    <td>{{selectedPost3.stock}} <input type="hidden" name="post3count" value="{{count3}}" /></td>
     <td><div class="input-group input-group-sm">
       <span class="input-group-btn">
         <button class="btn btn-secondary" type="button" (click)="onDecrease3(selectedPost3)">-</button>
@@ -319,12 +319,12 @@
     </div></td>
   </tr>
     <tr *ngIf="selectedPost4">
-    <td></td>
-    <td>{{selectedPost4.name}}</td>
-    <td>{{selectedPost4.uo}}</td>
-    <td>{{selectedPost4.io}}</td>
-    <td>{{selectedPost4.chan}}</td>
-    <td>{{selectedPost4.stock}}</td>
+    <td><button (click)="deletePost4()" class="">X</button></td>
+    <td>{{selectedPost4.name}} <input type="hidden" name="post4name" value="{{selectedPost4.name}}" /></td>
+    <td>{{selectedPost4.uo}} <input type="hidden" name="post4uo" value="{{selectedPost4.uo}}" /></td>
+    <td>{{selectedPost4.io}} <input type="hidden" name="post4io" value="{{selectedPost4.io}}" /></td>
+    <td>{{selectedPost4.chan}} <input type="hidden"  name="post4chan" value="{{selectedPost4.chan}}" /></td>
+    <td>{{selectedPost4.stock}} <input type="hidden" name="post4count" value="{{count4}}" /></td>
     <td><div class="input-group input-group-sm">
       <span class="input-group-btn">
         <button class="btn btn-secondary" type="button" (click)="onDecrease4(selectedPost4)">-</button>
@@ -336,12 +336,12 @@
     </div></td>
   </tr>
       <tr *ngIf="selectedPost5">
-    <td></td>
-    <td>{{selectedPost5.name}}</td>
-    <td>{{selectedPost5.uo}}</td>
-    <td>{{selectedPost5.io}}</td>
-    <td>{{selectedPost5.chan}}</td>
-    <td>{{selectedPost5.stock}}</td>
+    <td><button (click)="deletePost5()" class="">X</button></td>
+    <td>{{selectedPost5.name}} <input type="hidden" name="post5name" value="{{selectedPost5.name}}" /></td>
+    <td>{{selectedPost5.uo}} <input type="hidden" name="post5uo" value="{{selectedPost5.uo}}" /></td>
+    <td>{{selectedPost5.io}} <input type="hidden" name="post5io" value="{{selectedPost5.io}}" /></td>
+    <td>{{selectedPost5.chan}} <input type="hidden"  name="post5chan" value="{{selectedPost5.chan}}" /></td>
+    <td>{{selectedPost5.stock}} <input type="hidden" name="post5count" value="{{count5}}" /></td>
     <td><div class="input-group input-group-sm">
       <span class="input-group-btn">
         <button class="btn btn-secondary" type="button" (click)="onDecrease5(selectedPost5)">-</button>
@@ -353,12 +353,12 @@
     </div></td>
   </tr>
       <tr *ngIf="selectedPost6">
-    <td></td>
-    <td>{{selectedPost6.name}}</td>
-    <td>{{selectedPost6.uo}}</td>
-    <td>{{selectedPost6.io}}</td>
-    <td>{{selectedPost6.chan}}</td>
-    <td>{{selectedPost6.stock}}</td>
+    <td><button (click)="deletePost6()" class="">X</button></td>
+    <td>{{selectedPost6.name}} <input type="hidden" name="post6name" value="{{selectedPost6.name}}" /></td>
+    <td>{{selectedPost6.uo}} <input type="hidden" name="post6uo" value="{{selectedPost6.uo}}" /></td>
+    <td>{{selectedPost6.io}} <input type="hidden" name="post6io" value="{{selectedPost6.io}}" /></td>
+    <td>{{selectedPost6.chan}} <input type="hidden"  name="post6chan" value="{{selectedPost6.chan}}" /></td>
+    <td>{{selectedPost6.stock}} <input type="hidden" name="post6count" value="{{count6}}" /></td>
     <td><div class="input-group input-group-sm">
       <span class="input-group-btn">
         <button class="btn btn-secondary" type="button" (click)="onDecrease6(selectedPost6)">-</button>
@@ -370,12 +370,12 @@
     </div></td>
   </tr>
       <tr *ngIf="selectedPost7">
-    <td></td>
-    <td>{{selectedPost7.name}}</td>
-    <td>{{selectedPost7.uo}}</td>
-    <td>{{selectedPost7.io}}</td>
-    <td>{{selectedPost7.chan}}</td>
-    <td>{{selectedPost7.stock}}</td>
+    <td><button (click)="deletePost7()" class="">X</button></td>
+    <td>{{selectedPost7.name}} <input type="hidden" name="post7name" value="{{selectedPost7.name}}" /></td>
+    <td>{{selectedPost7.uo}} <input type="hidden" name="post7uo" value="{{selectedPost7.uo}}" /></td>
+    <td>{{selectedPost7.io}} <input type="hidden" name="post7io" value="{{selectedPost7.io}}" /></td>
+    <td>{{selectedPost7.chan}}<input type="hidden"  name="post7chan" value="{{selectedPost7.chan}}" /></td>
+    <td>{{selectedPost7.stock}} <input type="hidden" name="post7count" value="{{count7}}" /></td>
     <td><div class="input-group input-group-sm">
       <span class="input-group-btn">
         <button class="btn btn-secondary" type="button" (click)="onDecrease7(selectedPost7)">-</button>
@@ -387,12 +387,12 @@
     </div></td>
   </tr>
       <tr *ngIf="selectedPost8">
-    <td></td>
-    <td>{{selectedPost8.name}}</td>
-    <td>{{selectedPost8.uo}}</td>
-    <td>{{selectedPost8.io}}</td>
-    <td>{{selectedPost8.chan}}</td>
-    <td>{{selectedPost8.stock}}</td>
+    <td><button (click)="deletePost8()" class="">X</button></td>
+    <td>{{selectedPost8.name}} <input type="hidden" name="post8name" value="{{selectedPost8.name}}" /></td>
+    <td>{{selectedPost8.uo}}<input type="hidden" name="post8uo" value="{{selectedPost8.uo}}" /></td>
+    <td>{{selectedPost8.io}} <input type="hidden" name="post8io" value="{{selectedPost8.io}}" /></td>
+    <td>{{selectedPost8.chan}}<input type="hidden"  name="post8chan" value="{{selectedPost8.chan}}" /></td>
+    <td>{{selectedPost8.stock}} <input type="hidden" name="post8count" value="{{count8}}" /></td>
     <td><div class="input-group input-group-sm">
       <span class="input-group-btn">
         <button class="btn btn-secondary" type="button" (click)="onDecrease8(selectedPost8)">-</button>
@@ -404,12 +404,12 @@
     </div></td>
   </tr>
       <tr *ngIf="selectedPost9">
-    <td></td>
-    <td>{{selectedPost9.name}}</td>
-    <td>{{selectedPost9.uo}}</td>
-    <td>{{selectedPost9.io}}</td>
-    <td>{{selectedPost9.chan}}</td>
-    <td>{{selectedPost9.stock}}</td>
+    <td><button (click)="deletePost9()" class="">X</button></td>
+    <td>{{selectedPost9.name}} <input type="hidden" name="post9name" value="{{selectedPost9.name}}" /></td>
+    <td>{{selectedPost9.uo}}<input type="hidden" name="post9uo" value="{{selectedPost9.uo}}" /></td>
+    <td>{{selectedPost9.io}} <input type="hidden" name="post9io" value="{{selectedPost9.io}}" /></td>
+    <td>{{selectedPost9.chan}}<input type="hidden"  name="post9chan" value="{{selectedPost9.chan}}" /></td>
+    <td>{{selectedPost9.stock}} <input type="hidden" name="post9count" value="{{count9}}" /></td>
     <td><div class="input-group input-group-sm">
       <span class="input-group-btn">
         <button class="btn btn-secondary" type="button" (click)="onDecrease9(selectedPost9)">-</button>
@@ -421,12 +421,12 @@
     </div></td>
   </tr>
   <tr *ngIf="selectedPost10">
-    <td></td>
-    <td>{{selectedPost10.name}}</td>
-    <td>{{selectedPost10.uo}}</td>
-    <td>{{selectedPost10.io}}</td>
-    <td>{{selectedPost10.chan}}</td>
-    <td>{{selectedPost10.stock}}</td>
+    <td><button (click)="deletePost10()" class="">X</button></td>
+    <td>{{selectedPost10.name}} <input type="hidden" name="post10name" value="{{selectedPost10.name}}" /></td>
+    <td>{{selectedPost10.uo}}<input type="hidden" name="post10uo" value="{{selectedPost10.uo}}" /></td>
+    <td>{{selectedPost10.io}}<input type="hidden" name="post10io" value="{{selectedPost10.io}}" /></td>
+    <td>{{selectedPost10.chan}}<input type="hidden"  name="post10chan" value="{{selectedPost10.chan}}" /></td>
+    <td>{{selectedPost10.stock}} <input type="hidden" name="post10count" value="{{count10}}" /></td>
     <td><div class="input-group input-group-sm">
       <span class="input-group-btn">
         <button class="btn btn-secondary" type="button" (click)="onDecrease10(selectedPost10)">-</button>
@@ -438,12 +438,12 @@
     </div></td>
   </tr>
   <tr *ngIf="selectedPost11">
-    <td></td>
-    <td>{{selectedPost11.name}}</td>
-    <td>{{selectedPost11.uo}}</td>
-    <td>{{selectedPost11.io}}</td>
-    <td>{{selectedPost11.chan}}</td>
-    <td>{{selectedPost11.stock}}</td>
+    <td><button (click)="deletePost11()" class="">X</button></td>
+    <td>{{selectedPost11.name}} <input type="hidden" name="post11name" value="{{selectedPost11.name}}" /></td>
+    <td>{{selectedPost11.uo}}<input type="hidden" name="post11uo" value="{{selectedPost11.uo}}" /></td>
+    <td>{{selectedPost11.io}}<input type="hidden" name="post11io" value="{{selectedPost11.io}}" /></td>
+    <td>{{selectedPost11.chan}}<input type="hidden"  name="post11chan" value="{{selectedPost11.chan}}" /></td>
+    <td>{{selectedPost11.stock}} <input type="hidden" name="post11count" value="{{count11}}" /></td>
     <td><div class="input-group input-group-sm">
       <span class="input-group-btn">
         <button class="btn btn-secondary" type="button" (click)="onDecrease11(selectedPost11)">-</button>
@@ -455,12 +455,12 @@
     </div></td>
   </tr>
   <tr *ngIf="selectedPost12">
-    <td></td>
-    <td>{{selectedPost12.name}}</td>
-    <td>{{selectedPost12.uo}}</td>
-    <td>{{selectedPost12.io}}</td>
-    <td>{{selectedPost12.chan}}</td>
-    <td>{{selectedPost12.stock}}</td>
+    <td><button (click)="deletePost12()" class="">X</button></td>
+    <td>{{selectedPost12.name}} <input type="hidden" name="post12name" value="{{selectedPost12.name}}" /></td>
+    <td>{{selectedPost12.uo}}<input type="hidden" name="post12uo" value="{{selectedPost12.uo}}" /></td>
+    <td>{{selectedPost12.io}}<input type="hidden" name="post12io" value="{{selectedPost12.io}}" /></td>
+    <td>{{selectedPost12.chan}}<input type="hidden"  name="post12chan" value="{{selectedPost12.chan}}" /></td>
+    <td>{{selectedPost12.stock}} <input type="hidden" name="post12count" value="{{count12}}" /></td>
     <td><div class="input-group input-group-sm">
       <span class="input-group-btn">
         <button class="btn btn-secondary" type="button" (click)="onDecrease12(selectedPost12)">-</button>
@@ -472,12 +472,12 @@
     </div></td>
   </tr>
   <tr *ngIf="selectedPost13">
-    <td></td>
-    <td>{{selectedPost13.name}}</td>
-    <td>{{selectedPost13.uo}}</td>
-    <td>{{selectedPost13.io}}</td>
-    <td>{{selectedPost13.chan}}</td>
-    <td>{{selectedPost13.stock}}</td>
+    <td><button (click)="deletePost13()" class="">X</button></td>
+    <td>{{selectedPost13.name}} <input type="hidden" name="post13name" value="{{selectedPost13.name}}" /></td>
+    <td>{{selectedPost13.uo}}<input type="hidden" name="post13uo" value="{{selectedPost13.uo}}" /></td>
+    <td>{{selectedPost13.io}}<input type="hidden" name="post13io" value="{{selectedPost13.io}}" /></td>
+    <td>{{selectedPost13.chan}}<input type="hidden"  name="post13chan" value="{{selectedPost13.chan}}" /></td>
+    <td>{{selectedPost13.stock}} <input type="hidden" name="post13count" value="{{count13}}" /></td>
     <td><div class="input-group input-group-sm">
       <span class="input-group-btn">
         <button class="btn btn-secondary" type="button" (click)="onDecrease13(selectedPost13)">-</button>
@@ -489,12 +489,12 @@
     </div></td>
   </tr>
   <tr *ngIf="selectedPost14">
-    <td></td>
-    <td>{{selectedPost14.name}}</td>
-    <td>{{selectedPost14.uo}}</td>
-    <td>{{selectedPost14.io}}</td>
-    <td>{{selectedPost14.chan}}</td>
-    <td>{{selectedPost14.stock}}</td>
+    <td><button (click)="deletePost14()" class="">X</button></td>
+    <td>{{selectedPost14.name}} <input type="hidden" name="post14name" value="{{selectedPost14.name}}" /></td>
+    <td>{{selectedPost14.uo}}<input type="hidden" name="post14uo" value="{{selectedPost14.uo}}" /></td>
+    <td>{{selectedPost14.io}}<input type="hidden" name="post14io" value="{{selectedPost14.io}}" /></td>
+    <td>{{selectedPost14.chan}}<input type="hidden"  name="post14chan" value="{{selectedPost14.chan}}" />></td>
+    <td>{{selectedPost14.stock}} <input type="hidden" name="post14count" value="{{count14}}" /></td>
     <td><div class="input-group input-group-sm">
       <span class="input-group-btn">
         <button class="btn btn-secondary" type="button" (click)="onDecrease14(selectedPost14)">-</button>
@@ -506,12 +506,12 @@
     </div></td>
   </tr>
   <tr *ngIf="selectedPost15">
-    <td></td>
-    <td>{{selectedPost15.name}}</td>
-    <td>{{selectedPost15.uo}}</td>
-    <td>{{selectedPost15.io}}</td>
-    <td>{{selectedPost15.chan}}</td>
-    <td>{{selectedPost15.stock}}</td>
+    <td><button (click)="deletePost15()" class="">X</button></td>
+    <td>{{selectedPost15.name}} <input type="hidden" name="post15name" value="{{selectedPost15.name}}" /></td>
+    <td>{{selectedPost15.uo}}<input type="hidden" name="post15uo" value="{{selectedPost15.uo}}" /></td>
+    <td>{{selectedPost15.io}}<input type="hidden" name="post15io" value="{{selectedPost15.io}}" /></td>
+    <td>{{selectedPost15.chan}}<input type="hidden"  name="post15chan" value="{{selectedPost15.chan}}" /></td>
+    <td>{{selectedPost15.stock}} <input type="hidden" name="post15count" value="{{count15}}" /></td>
     <td><div class="input-group input-group-sm">
       <span class="input-group-btn">
         <button class="btn btn-secondary" type="button" (click)="onDecrease15(selectedPost15)">-</button>
@@ -523,12 +523,12 @@
     </div></td>
   </tr>
   <tr *ngIf="selectedPost16">
-    <td></td>
-    <td>{{selectedPost16.name}}</td>
-    <td>{{selectedPost16.uo}}</td>
-    <td>{{selectedPost16.io}}</td>
-    <td>{{selectedPost16.chan}}</td>
-    <td>{{selectedPost16.stock}}</td>
+    <td><button (click)="deletePost16()" class="">X</button></td>
+    <td>{{selectedPost16.name}} <input type="hidden" name="post16name" value="{{selectedPost16.name}}" /></td>
+    <td>{{selectedPost16.uo}}<input type="hidden" name="post16uo" value="{{selectedPost16.uo}}" /></td>
+    <td>{{selectedPost16.io}}<input type="hidden" name="post16io" value="{{selectedPost16.io}}" /></td>
+    <td>{{selectedPost16.chan}}<input type="hidden"  name="post16chan" value="{{selectedPost16.chan}}" /></td>
+    <td>{{selectedPost16.stock}} <input type="hidden" name="post16count" value="{{count16}}" /></td>
     <td><div class="input-group input-group-sm">
       <span class="input-group-btn">
         <button class="btn btn-secondary" type="button" (click)="onDecrease16(selectedPost16)">-</button>
@@ -540,12 +540,12 @@
     </div></td>
   </tr>
   <tr *ngIf="selectedPost17">
-    <td></td>
-    <td>{{selectedPost17.name}}</td>
-    <td>{{selectedPost17.uo}}</td>
-    <td>{{selectedPost17.io}}</td>
-    <td>{{selectedPost17.chan}}</td>
-    <td>{{selectedPost17.stock}}</td>
+    <td><button (click)="deletePost17()" class="">X</button></td>
+    <td>{{selectedPost17.name}} <input type="hidden" name="post17name" value="{{selectedPost17.name}}" /></td>
+    <td>{{selectedPost17.uo}}<input type="hidden" name="post17uo" value="{{selectedPost17.uo}}" /></td>
+    <td>{{selectedPost17.io}}<input type="hidden" name="post17io" value="{{selectedPost17.io}}" /></td>
+    <td>{{selectedPost17.chan}}<input type="hidden"  name="post17chan" value="{{selectedPost17.chan}}" /></td>
+    <td>{{selectedPost17.stock}} <input type="hidden" name="post17count" value="{{count17}}" /></td>
     <td><div class="input-group input-group-sm">
       <span class="input-group-btn">
         <button class="btn btn-secondary" type="button" (click)="onDecrease17(selectedPost17)">-</button>
@@ -558,59 +558,43 @@
   </tr>
 </tbody>
 </table>
- <form>
+
 
   <div class="form-group" style="margin-bottom:0">
     <label for="" style="margin-bottom:0">Имя</label>
-    <input required="required" type="text" class="form-control" id="" placeholder="" >
+    <input #box (input)="onNamae(box.value)" name="namae" required="required" type="text" class="form-control" value="{{namae}}" id="" placeholder="" >
   </div>
 
    <div class="form-group" style="margin-bottom:0">
     <label for="" style="margin-bottom:0">Контактный телефон</label>
-    <input required="required" type="text" class="form-control" id="" placeholder="" >
+    <input #box (input)="onTel(box.value)" name="tel" required="required" type="text" class="form-control" value="{{tel}}" id="" placeholder="" >
   </div>
 
   <div class="form-group" style="margin-bottom:0">
     <label for="" style="margin-bottom:0">Электронная почта</label>
-    <input required="required" type="email" class="form-control" id="" aria-describedby="" placeholder="">
+    <input #box (input)="onEmail(box.value)" name="email" required="required" type="email" class="form-control" value="{{email}}" id="" aria-describedby="" placeholder="">
 
   </div>
 
     <div class="form-group" style="margin-bottom:0">
     <label for="" style="margin-bottom:0">Компания</label>
-    <input type="text" class="form-control" id="" placeholder="">
+    <input #box (input)="onComp(box.value)" name="comp" type="text" class="form-control" id="" value="{{comp}}" placeholder="">
   </div>
   
    <div class="form-group" style="margin-bottom:0">
     <label for="" style="margin-bottom:0">Комментарий</label>
-    <textarea type="text" class="form-control" id="" placeholder=""> </textarea>
+    <textarea  #box (input)="onComm(box.value)" name="comm" type="text" class="form-control" id="" value="{{comm}}" placeholder=""> </textarea>
   </div>
   
-</form>
+
       </div>
       <div class="modal-footer">
   
- <button type="button"  class="btn btn-primary" data-dismiss="modal" aria-label="Close">Продолжить покупки</button>
-        <button type="button" onclick="$('#zak').modal('hide');$('#spasibo').modal('show')" class="btn btn-primary">Оформить</button>
-      </div>
-    </div>
-  </div>
-</div>
+ <button class="btn btn-primary" data-dismiss="modal" aria-label="Close">Продолжить покупки</button>
 
-
-<div class="modal fade" id="spasibo" tabindex="1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Оформление заказа</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <input class="btn btn-primary" type="submit" value="Оформить">
       </div>
-      <div class="modal-body">
-        Спасибо за ваш заказ скоро мы свяжемся с Вами!
-      </div>
-
+    </form>
     </div>
   </div>
 </div>
