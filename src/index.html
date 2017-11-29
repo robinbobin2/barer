@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Barer</title>
+  <title>К15 - БИЗ</title>
   <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,7 +14,41 @@
   <script tpye="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular.js"></script>
   <script type="text/javascript"></script>
   <!-- cmelo-angular-sticky JS file -->
-<style type="text/css">.selectedpost {
+<style type="text/css">
+/*.table-sm td{ 
+padding: .3rem; 
+padding-left: 0px; 
+padding-right: 0px; 
+}*/
+.doc-tex {font-size:13px;}
+.sib {line-height:30px}
+@media only screen and (max-width: 992px) {
+.navbar .nav-item { 
+ line-height: 24px; 
+}}
+/*вставишь?*/
+
+@media only screen and (max-width: 992px) {
+.doc-tex { 
+ font-size: 13px; 
+ margin-left: 7%; 
+}}
+.marg {
+  margin-left: 35px;
+}
+.conf {
+  color: #fff;
+  padding:2px 5px 2px 5px;
+}
+.delete {
+  color: red;
+  cursor: pointer;
+  display: block;
+}
+.delete:hover {
+  text-decoration:underline;
+}
+.selectedpost {
   background: rgba(0,0,0,.2);
 } 
 .selectedbutton {
@@ -25,7 +59,9 @@
     position: fixed; 
     top: 100px; 
 }
-
+.fixed {
+  margin-left: 0 !important;
+}
   html,body{width:100%;height:100%}
   
   .ng-hide-add, .ng-hide-remove {
@@ -237,7 +273,7 @@ background:#fff;border:2px solid rgb(142,139,170);float:left;margin-top:-20px;}
     .ova-center{float:none;margin:0 auto;margin-top:5px;}
     .ova-right{float:none;margin:0 auto;margin-top:5px;}
     
-    .tbl{font-size:8px}
+    .tbl{font-size:6px}
     
     .top-bl-left{float:none;margin:0 auto;}
     .top-bl-right{float:none;margin:0 auto;margin-top:5px;}
@@ -247,7 +283,7 @@ background:#fff;border:2px solid rgb(142,139,170);float:left;margin-top:-20px;}
     .cntr-bl-left-two{margin:0 auto;margin-top:5px;}
     
     .cntr-bl-right{margin:0 auto;margin-top:5px;}
-    .cntr-bl-right-one{margin:0 auto;margin-top:5px;}
+    .cntr-bl-right-one{margin:0 auto;margin-top:0px;}
     .cntr-bl-right-two{margin:0 auto;margin-top:5px;}
     
     
@@ -352,7 +388,7 @@ background:#BDC3C7;
 }
 
 .fixed{
-margin-left:4px;
+/*margin-left:4px;*/
   top:62px;
   position:fixed;
   width:auto;
@@ -433,7 +469,7 @@ margin-left:4px;
       </li>
     
       
-       <form class="form-inline" style="margin-left:35px;">
+       <form class="form-inline marg">
     <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#exampleModal">Оставить заявку</button>
 
   </form>
@@ -469,28 +505,29 @@ margin-left:4px;
         
   
     <div class="form-group" style="margin-bottom:0">
-    <label for="" style="margin-bottom:0">Имя</label>
-    <input type="text" name="namae" class="form-control" id="" placeholder="">
+    <label for="" style="margin-bottom:0">Имя <span style="color: red">*</span></label>
+    <input name="namae" required="required" type="text" class="form-control" value=" " id="" placeholder="" >
   </div>
-  
+
+   <div class="form-group" style="margin-bottom:0">
+    <label for="" style="margin-bottom:0">Контактный телефон <span style="color: red">*</span></label>
+    <input name="tel" required="required" type="text" id="phone" class="form-control" value=" ">
+  </div>
+
+  <div class="form-group" style="margin-bottom:0">
+    <label for="" style="margin-bottom:0">Электронная почта <span style="color: red">*</span></label>
+    <input name="email" required="required" type="email" class="form-control"  id="" aria-describedby="" placeholder="">
+
+  </div>
+
     <div class="form-group" style="margin-bottom:0">
-    <label for="" style="margin-bottom:0">Телефон</label>
-    <input type="text" name="tel" class="form-control" id="" placeholder="">
+    <label for="" style="margin-bottom:0">Компания</label>
+    <input name="comp" type="text" class="form-control" id="" placeholder="">
   </div>
   
-  <div class="form-group" style="margin-bottom:0">
-    <label for="" style="margin-bottom:0">Электронная почта</label>
-    <input type="email" name="email" class="form-control" id="" aria-describedby="" placeholder="">
-
-  </div>
-  <div class="form-group" style="margin-bottom:0">
-    <label for="" style="margin-bottom:0">Компания</label>
-    <input type="text" name="comp" class="form-control" id="" placeholder="">
-  </div>
-
-  <div class="form-group" style="margin-bottom:0">
+   <div class="form-group" style="margin-bottom:0">
     <label for="" style="margin-bottom:0">Комментарий</label>
-    <textarea name="comment" class="form-control" id="" placeholder=""></textarea>
+    <textarea name="comm" type="text" class="form-control" id="" placeholder=""> </textarea>
   </div>
 
       </div>
@@ -504,7 +541,7 @@ margin-left:4px;
 </div>
 
 
-<div   class="container-fluid"  style="text-align:center;padding-bottom:25px;margin-top:146px;">
+<div   class="container-fluid"  style="text-align:center;padding-bottom:45px;margin-top:146px;">
 
 
 
@@ -564,7 +601,7 @@ margin-left:4px;
 
 <div style="display:none;">Iteration: <span id="iteration"></span></div>
   <div id="video-viewport" class="video">
-  <div class="inner" style="position:absolute;margin-top:17vh;width:100%;text-align:center;">
+  <div class="inner">
     <div>
      <!--  <h3 style="font-weight: lighter;color:white"><?php echo get_theme_mod('text2'); ?></h3>
                 <h5 style="font-weight: lighter;color:white;width:600px;margin:0 auto;"><?php echo get_theme_mod('text3'); ?></h5> -->
@@ -859,9 +896,11 @@ $("#navbar").on("click", "#verh", function(){
     $('html,body').animate({scrollTop: idtop - 246}, 500);
     return false;
 });
-
+$("#navbarSupportedContent a").click(function() {
+   $("#navbarSupportedContent").collapse("toggle");
+});
   </script>
-
+<footer></footer>
   <script src="http://diplom-invoice.ru/iskra/wp/wp-content/themes/iskra/sorttable.js"></script>
 </body>
 <div class="modal fade" id="spasibo" tabindex="1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
